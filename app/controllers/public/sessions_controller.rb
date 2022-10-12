@@ -7,8 +7,15 @@ class Public::SessionsController < Devise::SessionsController
     root_path
   end
   
+  #ゲストログインのためのメソッド定義
+  def new_guest
+    customer = Customer.guest
+    sign_in customer
+    redirect_to root_path, notice: 'ゲストユーザーとしてログインしました。'
+  end
+  
   def after_sign_out_path_for(resource)
-    root_path
+    new_customer_session_path
   end
 
   # GET /resource/sign_in
