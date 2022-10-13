@@ -1,4 +1,9 @@
-<h2>Sign up</h2>
+<div class= "container">
+  <div class= "row">
+    <div class=  "col-8 my-5">
+      <h2>Sign up</h2>
+    </div>
+
 
 <%= form_with model: @customer, url: customer_registration_path do |f| %>
   <%= render "public/shared/error_messages", resource: resource %>
@@ -31,3 +36,7 @@
 </div>
 
 <%= render "public/shared/links" %>
+
+
+  </div>
+</div>

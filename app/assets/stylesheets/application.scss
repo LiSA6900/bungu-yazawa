@@ -24,3 +24,14 @@ footer{
     background-color: #CCCCCC;
     color: #666666;
 }
+
+.rink-button{
+    background-color: #343a40;;
+    color: white;
+     /* リンクの下線を無くす */
+    text-decoration: none;
+    border: 5px solid #343a40;
+     /* 少しだけ角を丸める */
+    border-radius: 3px;
+    padding: 3px 20px;
+}
