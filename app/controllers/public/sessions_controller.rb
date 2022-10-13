@@ -11,7 +11,7 @@ class Public::SessionsController < Devise::SessionsController
   def new_guest
     customer = Customer.guest
     sign_in customer
-    redirect_to root_path, notice: 'ゲストユーザーとしてログインしました。'
+    redirect_to root_path
   end
   
   def after_sign_out_path_for(resource)
