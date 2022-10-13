@@ -6,16 +6,87 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <%= notice %>
-    <%= link_to "ユーザーログアウト", destroy_customer_session_path, method: :delete %>
-    <%= link_to "管理者ログアウト", destroy_admin_session_path, method: :delete %>
-    <%= link_to 'ゲストログイン（閲覧用）', customers_guest_sign_in_path, method: :post %>
+    <header>
+      <div class="container">
+        <div class="row">
+          <nav class="col-12 navbar navbar-expand-lg navbar-light">
+            <p class="logo col-2">
+              <%= link_to "文具ヤザワ", root_path, class: "nav-link text-dark text-center" %>
+            </p>
+            <% if customer_sign_in? || customer_guest_sign_in? %>
+              <p class="col-3 m-5 align-self-center">ようこそ、<%= current_customer.last_name %>さん</p>
+            <% end %>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=“#navbarNavDropdown” aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="col-7 collapse navbar-collapse d-flex flex-column ml-auto" id=“navbarNavDropdown”>
+              <ul class="navbar-nav ml-auto">
+              <% if customer_sign_in? %>
+                <li class="nav-item">
+                  <%= link_to "お問合せフォーム", root_path, class: "nav-link text-dark" %>
+                </li>
+                <li class="nav-item">
+                  <%= link_to "お問合せ一覧", root_path, class: "nav-link text-dark" %>
+                </li>
+                <li class="nav-item">
+                  <%= link_to "マイページ", root_path, class: "nav-link text-dark" %>
+                </li>
+                <li class="nav-item">
+                  <%= link_to "ログアウト", destroy_customer_session_path, method: :delete, class: "nav-link text-dark" %>
+                </li>
+              <% elsif customer_guest_sign_in? %>
+                <li class="nav-item">
+                  <%= link_to "お問合せフォーム", root_path, class: "nav-link text-dark" %>
+                </li>
+                <li class="nav-item">
+                  <%= link_to "お問合せ一覧", root_path, class: "nav-link text-dark" %>
+                </li>
+                <li class="nav-item">
+                  <%= link_to "マイページ", root_path, class: "nav-link text-dark" %>
+                </li>
+                <li class="nav-item">
+                  <%= link_to "ログアウト", customers_guest_sign_in_path, method: :post, class: "nav-link text-dark" %>
+                </li>
+              <% elsif admin_signed_in? %>
+                <li class="nav-item">
+                  <%= link_to "お問合せ一覧", root_path, class: "nav-link text-dark" %>
+                </li>
+                <li class="nav-item">
+                  <%= link_to "会員一覧", root_path, class: "nav-link text-dark" %>
+                </li>
+                <li class="nav-item">
+                  <%= link_to "スケジュール管理", root_path, class: "nav-link text-dark" %>
+                </li>
+                <li class="nav-item">
+                  <%= link_to "ログアウト", destroy_admin_session_path, method: :delete, class: "nav-link text-dark" %>
+                </li>
+              <% else %>
+                <li class="nav-item">
+                  <%= link_to "TOP", root_path, class: "nav-link text-dark" %>
+                </li>
+                <li class="nav-item">
+                  <%= link_to "新規会員登録", root_path, class: "nav-link text-dark" %>
+                </li>
+                <li class="nav-item">
+                  <%= link_to "ログイン", root_path, class: "nav-link text-dark" %>
+                </li>
+              <% end %>
+              </ul>
+            </div>
+            <p><%= notice %></p>
+          </nav>
+        </div>
+      </div>
+    </header>
     
     <%= yield %>
+    
+    <footer>
+    </footer>
   </body>
 </html>
