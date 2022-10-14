@@ -14,13 +14,13 @@
           <%= f.label :"パスワード(6文字以上)" %><br />
           <%= f.password_field :password, autocomplete: "current-password", class: "form-control" %>
         </div>
-        <div class="actions mb-2 mx-auto">
+        <div class="actions mb-2 d-flex justify-content-center">
           <%= f.submit "ログイン", class: "btn btn-dark px-5" %>
         </div>
-        <div class="mx-auto d-inline-flex">
-          <%= link_to "ゲストログイン", customers_guest_sign_in_path, method: :post, class: "rink-button" %>
-        <div>
       <% end %>
+      <div class="text-center">
+        <%= link_to "ゲストログイン", customers_guest_sign_in_path, method: :post, class: "rink-button btn btn-dark px-4" %>
+      <div>
     </div>
   </div>
 </div>
