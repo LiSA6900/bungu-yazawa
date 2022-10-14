@@ -37,3 +37,4 @@ https://docs.google.com/spreadsheets/d/1AK5wtl7kxq7yVGnTE8eRq62Y10hZDCpV1q__2S13
 
 ## 使用素材
 - DesignEvo(ロゴ作成) : https://www.designevo.com/
+- O-DAN(写真素材) : https://o-dan.net/ja/

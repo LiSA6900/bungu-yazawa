@@ -21,7 +21,7 @@
 }
 
 .nav-item{
-    padding-right:20px;
+    padding-right: 20px;
 }
 
 footer{
@@ -30,7 +30,7 @@ footer{
 }
 
 .rink-button{
-    background-color: #343a40;;
+    background-color: #343a40;
     color: white;
      /* リンクの下線を無くす */
     text-decoration: none;
@@ -38,4 +38,32 @@ footer{
      /* 少しだけ角を丸める */
     border-radius: 3px;
     padding: 3px 20px;
+}
+
+.main-image{
+    background-image: image-url('bungu.jpg');
+    background-size: cover;
+    height: 700px;
+    width: 100%;
+    background-position: bottom;
+    position: relative;
+}
+
+.main-text{
+    font-size: 70px;
+    position: absolute;
+    right: 5%;
+    top: 15%;
+}
+
+.main-button{
+    font-size: 70px;
+    color: #666666;
+    border: 1px solid black;
+    border-radius: 50%;
+    background-color: #CCCCFF;
+    position: absolute;
+    right: 10%;
+    top: 50%;
+    height: 150px;
 }
