@@ -36,4 +36,4 @@ https://docs.google.com/spreadsheets/d/1AK5wtl7kxq7yVGnTE8eRq62Y10hZDCpV1q__2S13
 - IDE：Cloud9
 
 ## 使用素材
-- 使用検討中です。
+- DesignEvo(ロゴ作成) : https://www.designevo.com/

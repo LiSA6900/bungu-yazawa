@@ -14,12 +14,14 @@
 
   <body>
     <header>
-      <div class="container">
-        <div class="row my-3">
+      <div class="container ml-0">
+        <div class="row">
           <nav class="col-12 navbar navbar-expand-lg navbar-light">
-            <h3 class="logo col-3">
-              <%= link_to "文具ヤザワ", root_path, class: "nav-link text-dark font-weight-bold" %>
-            </h3>
+            <div class="logo">
+              <%= link_to root_path, class: "nav-link text-dark font-weight-bold" do %>
+                <img src="https://s3-us-east-2.amazonaws.com/designevo/projects/uid-3354370/056eee55c837503327eda1e141c7ed7f/preview.png?t=1665761452424" alt="文具ヤザワ">
+              <% end %>
+            </div>
             <% if customer_signed_in? %>
               <p class="col-3 m-5 align-self-center">ようこそ、<%= current_customer.last_name %>さん</p>
             <% end %>
