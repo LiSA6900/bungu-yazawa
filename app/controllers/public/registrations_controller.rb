@@ -9,6 +9,13 @@ class Public::RegistrationsController < Devise::RegistrationsController
     root_path
   end
   
+  #ゲストログインのためのメソッド定義
+  def new_guest
+    customer = Customer.guest
+    sign_in customer
+    redirect_to root_path
+  end
+  
   protected
   
   def configure_permitted_parameters
