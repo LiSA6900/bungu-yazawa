@@ -1,0 +1,8 @@
+ja:
+    enums:
+        inquiry:
+            order_status:
+                unconfirmed: "未確認"
+                not_received: "未受注"
+                order_received: "受注"
+                done: "対応済"

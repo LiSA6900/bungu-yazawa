@@ -4,6 +4,9 @@ class Customer < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   
+  has_many :inquiries, dependent: :destroy
+  has_many :notifications, dependent: :destroy
+  
   #ゲストログインをするための新規登録のデータ登録
   def self.guest
     find_or_create_by!(email: 'guest@test.com') do |customer|
