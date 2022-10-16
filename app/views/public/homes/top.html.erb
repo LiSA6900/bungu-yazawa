@@ -1,9 +1,15 @@
 <div class= "main-image">
+  <div>
     <div class="main-text font-weight-bold">
-        <p>文房具屋を</p>
-        <p>もっと身近に。</p>
+      <p>文房具屋を</p>
+      <p>もっと身近に。</p>
     </div>
+    <% if !customer_signed_in? %>
     <div>
-        <div><%= link_to "Click", new_customer_registration_path, class: "main-button pt-3" %></div>
+      <%= link_to new_customer_registration_path, class: "main-button pt-3" do %>
+        まずはご登録から＞＞
+      <% end %>
     </div>
+    <% end %>
+  </div>
 </div>

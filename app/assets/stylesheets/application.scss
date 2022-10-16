@@ -57,17 +57,39 @@ footer{
 }
 
 .main-button{
-    font-size: 70px;
-    color: #666666;
-    border: 1px solid black;
+    font-size: 20px;
+    color: black;
     border-radius: 50%;
-    background-color: #CCCCFF;
     position: absolute;
     right: 10%;
     top: 50%;
-    height: 150px;
 }
 
 thead{
     background-color: #F0F0F0;
+}
+
+// .navbar-collapse{
+//     flex-basis: 0%;
+// }
+
+p.align-self-center{
+    margin-bottom: 0rem;
+}
+
+.alart{
+  color: red;
+}
+
+    
+@media (min-width: 769px){
+    p.align-self-center{
+        text-align: left;
+    }
+}
+
+@media (max-width: 768px){
+    ul.navbar-nav {
+        display: none;
+    }
 }

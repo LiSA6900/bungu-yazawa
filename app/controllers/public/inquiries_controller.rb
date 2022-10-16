@@ -6,12 +6,17 @@ class Public::InquiriesController < ApplicationController
   def create
     @inquiry = Inquiry.new(inquiry_params)
     @inquiry.customer_id = current_customer.id
-    @inquiry.save
-    redirect_to root_path
+    if @inquiry.save
+      redirect_to inquiries_path
+    else
+      flash[:alart] = "※必須項目を入力してください"
+      render :new
+    end
   end
 
   def index
     @inquiries = Inquiry.all
+    @customer = current_customer
   end
 
   def show

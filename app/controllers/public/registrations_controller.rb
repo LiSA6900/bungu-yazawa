@@ -6,14 +6,14 @@ class Public::RegistrationsController < Devise::RegistrationsController
   before_action :configure_permitted_parameters, if: :devise_controller?
   
   def after_sign_up_path_for(resource)
-    root_path
+    new_inquiry_path
   end
   
   #ゲストログインのためのメソッド定義
   def new_guest
     customer = Customer.guest
     sign_in customer
-    redirect_to root_path
+    redirect_to new_inquiry_path
   end
   
   protected

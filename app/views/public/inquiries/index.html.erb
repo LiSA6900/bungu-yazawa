@@ -15,9 +15,9 @@
             <tbody>
                 <% @inquiries.each do |inquiry| %>    
                     <tr>
-                        <th><%= inquiry.created_at.strftime('%Y/%m/%d') %></th>
-                        <th><%= inquiry.title %></th>
-                        <th><%= link_to "詳細", root_path %></th>
+                        <th><%= @customer.inquiry.created_at.strftime('%Y/%m/%d') %></th>
+                        <th><%= @customer.inquiry.title %></th>
+                        <th><%= link_to "詳細", root_path, class: "btn btn-dark btn-sm" %></th>
                     </tr>
                 <% end %>
             </tbody>

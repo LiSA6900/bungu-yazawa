@@ -4,14 +4,14 @@ class Public::SessionsController < Devise::SessionsController
   # before_action :configure_sign_in_params, only: [:create]
 
   def after_sign_in_path_for(resource)
-    root_path
+    new_inquiry_path
   end
   
   #ゲストログインのためのメソッド定義
   def new_guest
     customer = Customer.guest
     sign_in customer
-    redirect_to root_path
+    redirect_to new_inquiry_path
   end
   
   def after_sign_out_path_for(resource)
