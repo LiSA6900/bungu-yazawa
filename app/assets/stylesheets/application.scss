@@ -86,15 +86,34 @@ p.align-self-center{
   padding : 10px 30px;
 }
 
+
+
     
 @media (min-width: 769px){
     p.align-self-center{
         text-align: left;
+        
+    }
+    .shadow-sm {
+        display: none;
     }
 }
 
 @media (max-width: 768px){
+    
     ul.navbar-nav {
         display: none;
+    }
+    
+    .navbar {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: end;
+    padding: 0.5rem 1rem;
+}
+    .nav-item{
+        text-align: right;
     }
 }
