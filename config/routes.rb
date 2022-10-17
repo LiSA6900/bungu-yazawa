@@ -12,8 +12,9 @@ Rails.application.routes.draw do
     resources :inquiries, only: [:new, :index, :show, :create]
     get "customers/my_page" => "customers#show"
     get "/customers/information/edit" => "customers#edit"
-    get "/customers/information" => "customers#update"
-    # resources :customers, only: [ :update, :unsubscribe, :withdraw]
+    patch "/customers/information" => "customers#update"
+    get "/customers/unsubscribe" => "customers#unsubscribe"
+    patch "/customers/withdraw" => "customers#withdraw"
   end
   
   #ゲストログインのためのルーティング

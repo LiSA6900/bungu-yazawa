@@ -9,7 +9,7 @@ class Public::InquiriesController < ApplicationController
     if @inquiry.save
       redirect_to inquiries_path
     else
-      flash[:alart] = "※必須項目を入力してください"
+      flash[:alart] = "※必須項目を入力してください。"
       render :new
     end
   end

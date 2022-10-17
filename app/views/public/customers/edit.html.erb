@@ -1,11 +1,11 @@
 <div class= "container">
-  <div class= "row my-3 py-2">
+  <div class= "row my-5 py-2">
     <div class=  "col-12 my-3">
-      <h2 class="text-center font-weight-bold">新規会員登録</h2>
+      <h2 class="text-center font-weight-bold">会員情報編集</h2>
     </div>
 
     <div class= "col-12 form-group d-flex justify-content-center">
-      <%= form_with model: @customer, url: customer_registration_path do |f| %>
+      <%= form_with model: @customer, url: customers_information_path, method: :patch do |f| %>
         <table class="field">
           <tbody>
             <tr>
@@ -13,23 +13,23 @@
               <td></td>
             </tr>
             <tr>
-              <td><%= f.text_field :last_name, autofocus: true, autocomplete: "last_name", placeholder: "姓", class: "form-control mb-2" %></td>
-              <td><%= f.text_field :first_name, autofocus: true, autocomplete: "first_name", placeholder: "名", class: "form-control mb-2 mx-4" %></td>
+              <td><%= f.text_field :last_name, class: "form-control mb-2" %></td>
+              <td><%= f.text_field :first_name, class: "form-control mb-2 mx-4" %></td>
             </tr>
             <tr>
               <td>フリガナ</td>
               <td></td>
             </tr>
             <tr>
-              <td><%= f.text_field :last_name_kana, autofocus: true, autocomplete: "last_name_kana", placeholder: "セイ", class: "form-control mb-2" %></td>
-              <td><%= f.text_field :first_name_kana, autofocus: true, autocomplete: "first_name_kana", placeholder: "メイ", class: "form-control mb-2 mx-4" %></td>
+              <td><%= f.text_field :last_name_kana, class: "form-control mb-2" %></td>
+              <td><%= f.text_field :first_name_kana, class: "form-control mb-2 mx-4" %></td>
             </tr>
             <tr>
               <td>郵便番号</td>
               <td></td>
             </tr>
             <tr>
-              <td><%= f.text_field :postal_code, autofocus: true, autocomplete: "postal_code", placeholder: "123-4567", class: "form-control mb-2" %></td>
+              <td><%= f.text_field :postal_code, class: "form-control mb-2" %></td>
               <td></td>
             </tr>
             <tr>
@@ -37,7 +37,7 @@
               <td></td>
             </tr>
             <tr>
-              <td colspan="2"><%= f.text_field :address, autofocus: true, autocomplete: "address", placeholder: "東京都渋谷区代々木神園町0-0", class: "form-control mb-2" %></td>
+              <td colspan="2"><%= f.text_field :address, class: "form-control mb-2" %></td>
               <td></td>
             </tr>
             <tr>
@@ -45,7 +45,7 @@
               <td></td>
             </tr>
             <tr>
-              <td><%= f.text_field :telephone_number, autofocus: true, autocomplete: "telephone_number", placeholder: "080-1234-5678", class: "form-control mb-2" %></td>
+              <td><%= f.text_field :telephone_number, class: "form-control mb-2" %></td>
               <td></td>
             </tr>
             <tr>
@@ -53,27 +53,16 @@
               <td></td>
             </tr>
             <tr>
-              <td colspan="2"><%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "abc@test.com", class: "form-control mb-2" %></td>
+              <td colspan="2"><%= f.email_field :email, class: "form-control mb-4" %></td>
               <td></td>
             </tr>
-            <tr>
-              <td>パスワード（6文字以上）</td>
-              <td></td>
-            </tr>
-            <tr>
-              <td colspan="2"><%= f.password_field :password, autocomplete: "new-password", class: "form-control mb-3" %></td>
-              <td></td>
-            </tr>
-            <tr class="actions mb-2 text-center">
-              <td colspan="2"><%= f.submit "新規登録", class: "btn btn-dark px-5" %></td>
-              <td></td>
+            <tr class="actions mb-4 text-center">
+              <td><%= f.submit "編集内容を保存する", class: "btn btn-info px-4" %></td>
+              <td><%= link_to "退会する", customers_unsubscribe_path,class: "btn btn-danger px-4" %></td>
             </tr>
           </tbody>
         </table>
       <% end %>
-    </div>
-    <div class="main-form col-12 d-flex justify-content-center">
-      <%= link_to "ゲストログイン", customers_guest_sign_in_path, method: :post, class: "rink-button btn btn-dark px-4" %>
     </div>
   </div>
 </div>

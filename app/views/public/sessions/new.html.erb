@@ -6,6 +6,8 @@
     
     <div class= "col-5 form-group mx-auto">
       <%= form_with model: @customer, url: customer_session_path do |f| %>
+        <%= render "public/shared/error_messages", resource: resource %>
+        
         <div class="field mb-4">
           <%= f.label :メールアドレス %><br />
           <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "abc@test.com", class: "form-control" %>
