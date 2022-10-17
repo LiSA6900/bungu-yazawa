@@ -1,0 +1,37 @@
+<div class= "container">
+  <div class= "row my-5">
+    <div class=  "col-12 my-2 d-flex">
+      <table class="mx-auto font-weight-bold">
+      <tbody>
+        <tr>
+          <td class="my_page_item"><h1 class="font-weight-bold mr-3">マイページ</h1></td>
+          <td class="my_page_item"><%= link_to "編集", customers_information_edit_path, class: "btn btn-info px-4" %></td>
+        </tr>
+        <tr>
+          <td class="my_page_item">氏名</td>
+          <td class="my_page_item"><%= @customer.last_name %>　<%= @customer.first_name %></td>
+        </tr>
+        <tr>
+          <td class="my_page_item">フリガナ</td>
+          <td class="my_page_item"><%= @customer.last_name_kana %>　<%= @customer.first_name_kana %></td>
+        </tr>
+        <tr>
+          <td class="my_page_item">郵便番号</td>
+          <td class="my_page_item">〒<%= @customer.postal_code %></td>
+        </tr>
+        <tr>
+          <td class="my_page_item">住所</td>
+          <td class="my_page_item"><%= @customer.address %></td>
+        </tr>
+        <tr>
+          <td class="my_page_item">電話番号</td>
+          <td class="my_page_item"><%= @customer.telephone_number %></td>
+        </tr>
+        <tr>
+          <td class="my_page_item">メールアドレス</td>
+          <td class="my_page_item"><%= @customer.email %></td>
+        </tr>
+      </tbody>  
+    </table>
+  </div>
+</div>

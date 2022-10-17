@@ -10,7 +10,10 @@ Rails.application.routes.draw do
 
   scope module: :public do
     resources :inquiries, only: [:new, :index, :show, :create]
-    resources :customers, only: [:show, :edit, :update, :unsubscribe, :withdraw]
+    get "customers/my_page" => "customers#show"
+    get "/customers/information/edit" => "customers#edit"
+    get "/customers/information" => "customers#update"
+    # resources :customers, only: [ :update, :unsubscribe, :withdraw]
   end
   
   #ゲストログインのためのルーティング
