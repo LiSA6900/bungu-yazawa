@@ -6,3 +6,11 @@ ja:
                 not_received: "未受注"
                 order_received: "受注"
                 done: "対応済"
+
+    views:
+        pagination:
+            first: "最初"
+            last: "最後"
+            previous: "前"
+            next: "次"
+            truncate: "..."

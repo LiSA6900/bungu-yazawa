@@ -98,6 +98,14 @@ p.align-self-center{
     border-top: 2px solid grey;
     border-bottom: 2px solid grey;
 }
+
+.pagination {
+  justify-content: center;
+}
+
+.page, .next, .last, .first, .prev{
+  padding-right: 8px;
+}
     
 @media (min-width: 769px){
     p.align-self-center{

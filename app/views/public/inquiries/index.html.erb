@@ -3,25 +3,27 @@
     <div class= "col-12 my-3">
         <h2 class="inquiry-form font-weight-bold">お問合せ一覧</h2>
     </div>
-    <table class= "table-boder col-8 mx-auto text-center">
-        <thead class= "table-boder">
-            <tr>
-                <th class= "list col-2">日時</th>
-                <th class= "list col-4">件名</th>
-                <th class= "list col-2"></th>
-            </tr>
-        </thead>
-        <tbody>
-            <% @inquiries.each do |inquiry| %>    
+    <div class="col-8 mx-auto">
+        <table class= "table-boder text-center">
+            <thead class= "table-boder">
                 <tr>
-                    <th class= "list"><%= inquiry.created_at.strftime('%Y/%m/%d') %></th>
-                    <th class= "list"><%= inquiry.title %></th>
-                    <th class= "list"><%= link_to "詳細", root_path, class: "btn btn-dark px-3" %></th>
+                    <th class= "list col-2">日時</th>
+                    <th class= "list col-4">件名</th>
+                    <th class= "list col-2"></th>
                 </tr>
-            <% end %>
-        </tbody>
-    </table>
-    <div class="col-12 mb-4 mt-3 mx-auto">
+            </thead>
+            <tbody>
+                <% @inquiries.each do |inquiry| %>    
+                    <tr>
+                        <th class= "list"><%= inquiry.created_at.strftime('%Y/%m/%d') %></th>
+                        <th class= "list"><%= inquiry.title %></th>
+                        <th class= "list"><%= link_to "詳細", root_path, class: "btn btn-dark px-3" %></th>
+                    </tr>
+                <% end %>
+            </tbody>
+        </table>
+    </div>
+    <div class="col-12 mb-4 mt-3">
       <div><%= paginate @inquiries %></div>
     </div>
   </div>
