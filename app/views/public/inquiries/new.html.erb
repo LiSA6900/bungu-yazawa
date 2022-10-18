@@ -18,6 +18,7 @@
           <%= f.label :参考ファイル %><strong></%>【任意】</strong><br />
            <!--multiple: trueにすることで画像を一度に複数選択出来る-->
           <%= f.file_field :image, accept: "image/*", multiple: true %>
+          <!--accept: "image/*"を入れちゃうと画像しか送れないけど入れなければエクセルなどのファイルも送れる-->
         </div>
           <%= f.hidden_field :order_status %>
         <div class="actions mb-2 d-flex justify-content-center">

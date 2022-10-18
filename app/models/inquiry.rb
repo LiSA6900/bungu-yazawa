@@ -1,5 +1,5 @@
 class Inquiry < ApplicationRecord
-    belongs_to :user
+    belongs_to :customer
     has_many :notifications, dependent: :destroy
     has_many :schedules, dependent: :destroy
     

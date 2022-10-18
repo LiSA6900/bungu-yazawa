@@ -15,8 +15,7 @@ class Public::InquiriesController < ApplicationController
   end
 
   def index
-    @inquiries = Inquiry.all
-    @customer = current_customer
+    @inquiries = current_customer.inquiries.all
   end
 
   def show
