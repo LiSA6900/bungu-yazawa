@@ -15,7 +15,7 @@ class Public::InquiriesController < ApplicationController
   end
 
   def index
-    @inquiries = current_customer.inquiries.all
+    @inquiries = current_customer.inquiries.page(params[:page]).per(10)
   end
 
   def show
