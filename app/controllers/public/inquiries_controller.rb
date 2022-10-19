@@ -15,9 +15,9 @@ class Public::InquiriesController < ApplicationController
   end
 
   def index
-    @inquiries = current_customer.inquiries.order(id:"DESC").page(params[:page]).per(10)
+    @inquiries = current_customer.inquiries.page(params[:page]).per(10)
   end
-
+  
   def show
   end
   

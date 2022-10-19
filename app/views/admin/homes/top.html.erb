@@ -1,6 +1,21 @@
 <div class= "container">
   <div class= "row my-3">
     <div class= "col-12 my-3">
+        
+    <!--検索窓の表示（問い合わせのタイトルと内容で検索）-->
+      <div class="search-form ml-auto">
+        <form>
+          <%= form_with model: @inquiry, url: admin_search_path, method: :get do |f| %>
+            <%= f.text_field :search, placeholder: "キーワードを入力" %>
+          <div class="button">
+            <%= f.button :type => "submit", :name => nil do %>
+              <i class="fas fa-search"></i>
+            <% end %>
+          </div>
+          <% end %>
+        </form>
+      </div>
+      
     <!--タブ部分-->
     <ul class="nav nav-tabs">
         <li class="tab tab-active nav-item px-4 py-1 font-weight-bold">

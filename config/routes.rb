@@ -28,6 +28,7 @@ Rails.application.routes.draw do
   }
   namespace :admin do
     get "/" => "homes#top"
+    get "search" => "inquiry#search"
     resources :schedules, only: [:index, :show, :destroy]
     resources :inquiries, only: [:show, :update]
     resources :customers, only: [:index, :show, :edit, :update]

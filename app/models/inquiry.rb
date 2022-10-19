@@ -14,4 +14,12 @@ class Inquiry < ApplicationRecord
       profile_image.variant(resize_to_limit: [width, height]).processed
     end
     
+    def self.search(search)
+      if search
+        Inquiry.where(['title LIKE ? or body LIKE ?', "%#{search}%", "%#{search}%"])
+      else
+        Inquiry.all
+      end
+    end
+    
 end
