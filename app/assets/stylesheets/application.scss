@@ -91,7 +91,7 @@ p.align-self-center{
 }
 
 .inquiry-form{
-    padding-left: 9%;
+    padding-left: 16%;
 }
 
 .table-boder{
@@ -105,6 +105,38 @@ p.align-self-center{
 
 .page, .next, .last, .first, .prev{
   padding-right: 8px;
+}
+
+// タブ切り替え
+// .tab {
+//   width: 100%;
+//   padding: 10px;
+//   cursor: pointer;
+//   border-left: solid 1px #CCC;
+//   border-bottom: solid 1px #CCC;
+// }
+// .tab:first-child {
+//   border-left: none;
+// }
+// タブがactiveのときのデザイン
+.tab-active {
+  color: #FFF;
+  background: #19b5d1;
+  transition: all 0.2s ease-in-out;
+}
+// タブの中身、最初は非表示
+.tabbox {
+  display: none;
+  padding: 15px;
+}
+// box-showクラスのものだけ表示
+.box-show {
+  display: table-row-group;
+}
+// hover時のアクション
+.tab:hover{
+  box-shadow: 0 4px 7px 0 rgba(0, 0, 0, 0.5);
+  transform: translateY(-1px);
 }
     
 @media (min-width: 769px){
