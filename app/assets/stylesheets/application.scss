@@ -139,7 +139,7 @@ p.align-self-center{
   transform: translateY(-1px);
 }
 
-.search-form form{
+.search-form{
   display: block;
   position: relative;
 }
@@ -150,6 +150,11 @@ p.align-self-center{
   top: 5%;
   border: none;
   background: transparent;
+}
+
+.custom-size-l {
+  font-size: 1.4em;
+  height: 38px;
 }
     
 @media (min-width: 769px){

@@ -7,9 +7,4 @@ class Admin::HomesController < ApplicationController
     @inquiries_done = Inquiry.where(order_status: "done").order(id:"DESC").page(params[:page])
   end
   
-  def search
-    #Viewのformで取得したパラメータをモデルに渡す
-    @inquiries = Inquiry.search(params[:search]).order(id:"DESC").page(params[:page])
-    render :top
-  end
 end

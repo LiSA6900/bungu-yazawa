@@ -57,8 +57,8 @@
               <%= link_to "ログイン", new_customer_session_path, class: "nav-link text-dark" %>
             </li>
           <% end %>
-          </ul>
         </div>
+
         <nav class="navbar navbar-light" style="justify-content: end;">
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -108,6 +108,7 @@
               <li class="nav-item">
                 <%= link_to "ログアウト", destroy_admin_session_path, method: :delete, class: "nav-link text-dark" %>
               </li>
+
             <% elsif request.path == '/admin/sign_in' %>
               <li class="nav-item">
                 <%= link_to "ログイン", new_admin_session_path, class: "nav-link text-dark" %>
@@ -127,6 +128,25 @@
           </div>
         </div>
       </nav>
+      
+      <!--管理者でログインしている場合のみ検索窓の表示（問い合わせのタイトルと内容で検索）-->
+      <% if admin_signed_in? %>
+      <div class="container">
+        <div>
+          <%= form_with url: admin_search_path, method: :get do |f| %>
+            <div class="form-group row">
+              <%= f.text_field :search, class: "form-control offset-sm-8 col-sm-3" %>
+              <div class="button col-sm-1">
+                <%= f.button :type => "submit", :name => nil, style: "border:none;background:none;" do %>
+                  <i class="fas fa-search custom-size-l"></i>
+                <% end %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+        <% end %>
+        
+      </div>
     </header>
     
     <main class= "mb-auto"> 

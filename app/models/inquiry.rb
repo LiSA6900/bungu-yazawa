@@ -8,6 +8,7 @@ class Inquiry < ApplicationRecord
     
     has_many_attached :images
     
+    # Inquiry.order_statuses, Inquiry.uncofirmed, Inquiry.last.unconfirmed?, Inquiry.last.unconfirmed!
     enum order_status: { unconfirmed: 0, not_received: 1, order_received: 2, done: 3 }
     
     def get_profile_image(width, height)
@@ -23,3 +24,6 @@ class Inquiry < ApplicationRecord
     end
     
 end
+
+
+
