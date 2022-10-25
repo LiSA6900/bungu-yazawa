@@ -1,0 +1,61 @@
+<div class= "container">
+  <div class= "row mt-3 mb-5">
+    <div class=  "col-12 my-3">
+        <h2 class="text-center font-weight-bold">お問合せ詳細</h2>
+      <p class="notice text-center"><%= flash[:notice] %></p>
+    </div>
+    
+    <div class= "col-12 my-2">
+      <table class="table-bordered mx-auto font-weight-bold">
+        <tbody>
+          <tr>
+            <td class="table col-2">問い合わせID</td>
+            <td class="table col-7"><%= @inquiry.id %></td>
+          </tr>
+          <tr>
+            <td class="table col-2">ステータス</td>
+            <td class="table col-7">
+            <%= form_with model: @inquiry, url: admin_inquiry_path(@inquiry), method: :patch do |f| %>
+              <%= f.select :order_status, Inquiry.order_statuses.keys.map {|k| [I18n.t("enums.inquiry.order_status.#{k}"), k]} %>
+              <%= f.submit "更新", class: "btn btn-info font-weight-bold px-2 ml-4" %>
+            <% end %>
+          </tr>
+          <tr>
+            <td class="table col-2">氏名</td>
+            <td class="table col-7"><%= @inquiry.customer.last_name %>　<%= @inquiry.customer.first_name %></td>
+          </tr>
+          <tr>
+            <td class="table col-2">日時</td>
+            <td class="table col-7"><%= @inquiry.created_at.strftime('%Y/%m/%d') %></td>
+          </tr>
+          <tr>
+            <td class="table col-2">件名</td>
+            <td class="table col-7"><%= @inquiry.title %></td>
+          </tr>
+          <tr>
+            <td class="table col-2">お問合せ内容</td>
+            <td class="table col-7"><%= @inquiry.body %></td>
+          </tr>
+          <tr>
+            <td class="table col-2">参考ファイル（任意）</td>
+            <td class="table col-7">
+            <!--画像の場合（画像を表示）、PDFの場合（リンクを移動して表示）、エクセルの場合（ダウンロードする）で表示方法をif文で指定-->
+              <% @inquiry.images.each do |image| %>
+              <% p image %>
+                <% if image.content_type.include?("pdf") %>
+                <!--{target: "_blank", rel: "noopener noreferrer"}を入れるとファイルを表示する際に別タブで開けるようになる-->
+                  <%= link_to image.filename, image, {target: "_blanåk", rel: "noopener noreferrer"} %></br>
+                <% elsif image.content_type.include?("sheet") %>
+                  <%= link_to image.filename, image %></br>
+                <% else %>
+                <!--width => "300"等で指定してもOK-->
+                  <%= image_tag image,:width => "90%" %></br>
+                <% end %>
+              <% end %>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

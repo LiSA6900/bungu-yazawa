@@ -15,6 +15,19 @@ class Admin::InquiriesController < ApplicationController
   end
   
   def show
-  end  
+    @inquiry = Inquiry.find(params[:id])
+  end
+  
+  def update
+    @inquiry = Inquiry.find(params[:id])
+    @inquiry.update(inquiry_params)
+    flash[:notice] = "ステータスを更新しました。"
+    render :show 
+  end
+  
+  private
+  def inquiry_params
+    params.require(:inquiry).permit(:title, :body, :order_status, images: [])
+  end
   
 end

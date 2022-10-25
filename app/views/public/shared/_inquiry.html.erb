@@ -4,6 +4,6 @@
         <th class= "list text-center"><%= inquiry.created_at.strftime('%Y/%m/%d') %></th>
         <th class= "list text-center"><%= inquiry.title %></th>
         <th class= "list text-center"><%= inquiry.order_status_i18n %></th>
-        <th class= "list text-center"><%= link_to "詳細", root_path, class: "btn btn-dark px-3" %></th>
+        <th class= "list text-center"><%= link_to "詳細", admin_inquiry_path(inquiry), class: "btn btn-dark px-3" %></th>
     </tr>
 <% end %>
