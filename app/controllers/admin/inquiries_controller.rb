@@ -1,4 +1,5 @@
 class Admin::InquiriesController < ApplicationController
+  #検索窓の実装
   def search
     #Viewのformで取得したパラメータをモデルに渡す
     # @inquiries = Inquiry.all
@@ -12,4 +13,8 @@ class Admin::InquiriesController < ApplicationController
     @inquiries = inquiries.page(params[:page])
     render :"admin/homes/top"
   end
+  
+  def show
+  end  
+  
 end

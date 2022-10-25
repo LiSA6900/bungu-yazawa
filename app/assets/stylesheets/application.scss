@@ -156,7 +156,11 @@ p.align-self-center{
   font-size: 1.4em;
   height: 38px;
 }
-    
+
+.table{
+    height: 50px;
+}
+
 @media (min-width: 769px){
     p.align-self-center{
         text-align: left;

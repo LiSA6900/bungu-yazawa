@@ -15,15 +15,17 @@ class Public::InquiriesController < ApplicationController
   end
 
   def index
-    @inquiries = current_customer.inquiries.page(params[:page]).per(10)
+    @inquiries = current_customer.inquiries.order(id:"DESC").page(params[:page]).per(10)
   end
   
   def show
+    @inquiry = Inquiry.find(params[:id])
   end
+  
   
   private
   def inquiry_params
-    params.require(:inquiry).permit(:title, :body, :image, :order_status)
+    params.require(:inquiry).permit(:title, :body, :order_status, images: [])
   end
   
 end
