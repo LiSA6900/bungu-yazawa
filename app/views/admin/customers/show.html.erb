@@ -6,7 +6,7 @@
         <tr>
           <td class="my_page_item"><h1 class="font-weight-bold mr-3">会員詳細</h1></td>
           <td class="my_page_item">
-              <%= link_to "お問合せ一覧", admin_path, class: "btn btn-dark px-4 mr-5" %>
+              <%= link_to "お問合せ履歴", admin_inquiries_path(@customer.id), class: "btn btn-dark px-4 mr-5" %>
               <%= link_to "編集", edit_admin_customer_path(@customer), class: "btn btn-info px-4" %>
           </td>
         </tr>

@@ -22,7 +22,7 @@
                         <% if customer.is_deleted != true %>
                             <span style= "color: green;", class: "font-weight-bold">有効</span>
                         <% else %>
-                            <span style= "color: #C0C0C0;", class: "font-weight-bold">有効</span>
+                            <span style= "color: #C0C0C0;", class: "font-weight-bold">退会</span>
                         <% end %>
                     </th>
                     <th class= "list text-center"><%= link_to "詳細", admin_customer_path(customer.id), class: "btn btn-dark px-3" %></th>

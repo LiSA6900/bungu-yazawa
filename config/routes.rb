@@ -30,7 +30,7 @@ Rails.application.routes.draw do
     get "/" => "homes#top"
     get "search" => "inquiries#search"
     resources :schedules, only: [:index, :show, :destroy]
-    resources :inquiries, only: [:show, :update]
+    resources :inquiries, only: [:show, :update, :index]
     resources :customers, only: [:index, :show, :edit, :update]
   end
 

@@ -15,19 +15,27 @@ class Admin::InquiriesController < ApplicationController
   end
   
   def show
-    @inquiry = Inquiry.find(params[:id])
+    @inquiry = Inquiry.find(params[:id]) 
   end
   
   def update
-    @inquiry = Inquiry.find(params[:id])
+    @inquiry = Inquiry.find(params[:id]) 
     @inquiry.update(inquiry_params)
-    flash[:notice] = "ステータスを更新しました。"
-    render :show 
+    flash[:success] = "ステータスを更新しました。"
+    render :show
+  end
+  
+  def index
+    customer = Customer.find(params[:format])
+    @inquiries = customer.inquiries.order(id:"DESC").page(params[:page])
+    # binding.pry
+    # @inquiries = Customer.inquiry.page(params[:page])
   end
   
   private
-  def inquiry_params
-    params.require(:inquiry).permit(:title, :body, :order_status, images: [])
-  end
   
+  def inquiry_params
+    params.require(:inquiry).permit(:order_status)
+  end
+
 end
