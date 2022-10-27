@@ -1,0 +1,11 @@
+<h1>Admin::Schedules#index,</h1>
+<p>Find me in app/views/admin/schedules/index,.html.erb</p>
+<%= @calendar_id %>
+<% events = @calendar.list_events(@calendar_id) %>
+<% events.items.each do |event| %>
+    <%= "-#{event.id} " %>
+    <%= "-#{event.summary} " %>
+    <%= "-#{event.location} " %>
+    <%= "-#{event.start.date_time} " %>
+    <%= "-#{event.end.date_time} " %>
+<% end %>

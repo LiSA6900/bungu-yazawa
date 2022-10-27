@@ -29,9 +29,11 @@ Rails.application.routes.draw do
   namespace :admin do
     get "/" => "homes#top"
     get "search" => "inquiries#search"
-    resources :schedules, only: [:index, :show, :destroy]
+    # resources :schedules, only: [:index, :show, :destroy]
     resources :inquiries, only: [:show, :update, :index]
     resources :customers, only: [:index, :show, :edit, :update]
+    get "schedules", to:"schedules#index"
+    get "oauth2callback", to:"schedules#callback"
   end
 
 

@@ -64,3 +64,9 @@ gem "net-smtp"
 gem "enum_help"
 
 gem 'kaminari','~> 1.2.1'
+
+# google_calendarの設定
+gem 'google-apis-calendar_v3'
+gem 'google-api-ruby-client'
+gem 'googleauth'
+gem 'dotenv-rails'
