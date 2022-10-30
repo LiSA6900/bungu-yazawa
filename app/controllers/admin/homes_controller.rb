@@ -1,4 +1,6 @@
 class Admin::HomesController < ApplicationController
+    before_action :authenticate_admin! 
+  
   def top
     #inquiryコントローラーのsearchメソッドの書き方でもOK
     @inquiries = Inquiry.order(id:"DESC").page(params[:page])

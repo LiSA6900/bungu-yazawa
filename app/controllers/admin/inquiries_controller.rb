@@ -1,4 +1,7 @@
 class Admin::InquiriesController < ApplicationController
+  
+  before_action :authenticate_admin!
+     
   #検索窓の実装
   def search
     #Viewのformで取得したパラメータをモデルに渡す

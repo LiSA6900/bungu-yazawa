@@ -1,4 +1,7 @@
 class Public::InquiriesController < ApplicationController
+  
+  before_action :authenticate_customer!
+  
   def new
     @inquiry = Inquiry.new
   end

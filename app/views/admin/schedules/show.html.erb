@@ -1,2 +1,21 @@
-<h1>Admin::Schedules#show,</h1>
-<p>Find me in app/views/admin/schedules/show,.html.erb</p>
+<p id="notice"><%= notice %></p>
+<div class="show">
+    <p>
+      <strong>タイトル</strong>
+      <%= @schedule.title %>
+    </p>
+    
+    <p>
+      <strong>内容</strong>
+      <%= @schedule.body %>
+    </p>
+    
+    <p>
+      <strong>日時</strong>
+      <%= @schedule.start_time.strftime("%m-%d") %>
+    </p>
+    
+    <%= link_to '編集', edit_admin_schedule_path(@schedule) %>
+    <%= link_to '消去',admin_schedule_path(@schedule.id), method: :delete, data: { confirm: '本当に削除しますか?' } %>
+    <%= link_to '戻る', admin_schedules_path %>
+</div>

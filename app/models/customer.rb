@@ -5,7 +5,9 @@ class Customer < ApplicationRecord
          :recoverable, :rememberable, :validatable
   
   has_many :inquiries, dependent: :destroy
-  has_many :notifications, dependent: :destroy
+  # active_notifications：自分からの通知。ユーザーを削除したとき、同時に通知も削除したいので、 dependent: :destroyを追加。
+  has_many :active_notifications, class_name: 'Notification', foreign_key: 'visitor_id', dependent: :destroy
+  
   
   validates :last_name, presence: true
   validates :first_name, presence: true

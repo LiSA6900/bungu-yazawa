@@ -40,5 +40,5 @@ yarn-debug.log*
 .yarn-integrity
 
 # google_calendarの設定
-.env
-/google-cal/client_secret.json
+; .env
+; /google-cal/client_secret.json
