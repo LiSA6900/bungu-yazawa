@@ -171,7 +171,13 @@ p.align-self-center{
 
   .table-striped tbody tr:nth-of-type(odd) {
     background-color: rgba(0, 0, 0, 0);
-  }    
+  }
+  
+  .calendar-heading{
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+  }
     
   .day {}
 
