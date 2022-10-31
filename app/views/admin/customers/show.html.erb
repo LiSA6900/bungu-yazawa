@@ -1,14 +1,13 @@
-<div class= "container">
+<div class="container">
   <div class= "row mb-5 mt-4">
-    <div class=  "col-12 my-2 d-flex">
+    
+  <div class="col-4 mx-auto">
+    <%= render '/admin/shared/schedule', schedules: Schedule.all, schedule: Schedule.new %>
+  </div>
+
+    <div class= "col-8 my-2 d-flex">
       <table class="mx-auto font-weight-bold">
       <tbody>
-        <tr>
-          <td class="my_page_item"><h1 class="font-weight-bold mr-3">会員詳細</h1></td>
-          <td class="my_page_item">
-              <%= link_to "お問合せ履歴", admin_inquiries_path(@customer.id), class: "btn btn-dark px-4 mr-5" %>
-              <%= link_to "編集", edit_admin_customer_path(@customer), class: "btn btn-info px-4" %>
-          </td>
         </tr>
         <tr>
           <td class="my_page_item">会員ID</td>
@@ -44,10 +43,18 @@
             <% if @customer.is_deleted != true %>
                 <span style= "color: green;", class: "font-weight-bold">有効</span>
             <% else %>
-                <span style= "color: #C0C0C0;", class: "font-weight-bold">有効</span>
+                <span style= "color: #C0C0C0;", class: "font-weight-bold">退会</span>
             <% end %>
           </td>
         </tr>
+        <tr>
+          <td colspan="2">
+            <%= link_to admin_inquiries_path(@customer.id), class: "btn btn-dark px-4 mx-5" do %>
+              <%= @customer.last_name %>さんのお問合せ履歴
+            <% end %>
+            <%= link_to "編集", edit_admin_customer_path(@customer), class: "btn btn-info px-4" %>
+          </td>
+          <td></td>
       </tbody>  
     </table>
   </div>

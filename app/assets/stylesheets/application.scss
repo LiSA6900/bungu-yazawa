@@ -87,7 +87,7 @@ p.align-self-center{
 }
 
 .my_page_item{
-  font-size: 20px;
+  font-size: 18px;
   padding : 10px 30px;
 }
 
@@ -95,9 +95,9 @@ p.align-self-center{
     height: 50px;
 }
 
-.inquiry-form{
-    padding-left: 16%;
-}
+// .inquiry-form{
+//     padding-left: 16%;
+// }
 
 .table-boder{
     border-top: 2px solid grey;
@@ -174,12 +174,13 @@ p.align-self-center{
   }
   
   .calendar-heading{
-    text-align: center;
     font-size: 25px;
     font-weight: bold;
   }
     
-  .day {}
+  .day {
+    height: 130px;
+  }
 
   .wday-0 {}
   .wday-1 {}

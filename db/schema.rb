@@ -94,7 +94,6 @@ ActiveRecord::Schema.define(version: 2022_10_15_130452) do
 
   create_table "schedules", force: :cascade do |t|
     t.integer "admin_id", null: false
-    t.integer "inquiry_id", null: false
     t.datetime "start_time", null: false
     t.string "title", null: false
     t.string "body", null: false

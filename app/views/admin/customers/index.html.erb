@@ -1,8 +1,13 @@
-<div class= "container">
-  <div class= "row my-3">
-    <div class= "col-12 my-3">
-    <h2 class="inquiry-form font-weight-bold">会員一覧</h2>
-    <table class= "col-10 table-boder mx-auto">
+<div class="container">
+  <div class= "row mx-auto my-3">
+
+  <div class="col-4 mx-auto">
+    <%= render '/admin/shared/schedule', schedules: Schedule.all, schedule: Schedule.new %>
+  </div>      
+
+    <div class= "col-8 my-3">
+    <h2 class="text-center font-weight-bold">会員一覧</h2>
+    <table class= "w-100 table-boder">
         <thead class= "table-boder">
             <tr>
                 <th class= "list text-center", style="width:15%;">会員ID</th>
@@ -31,7 +36,7 @@
         </tbody>
     </table>
     </div>
-    <div class="col-12 mb-4 mt-3">
+    <div class="col-8 mb-4 mt-3">
       <div><%= paginate @customers %></div>
     </div>
     </div>

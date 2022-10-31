@@ -1,59 +1,25 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+<div class="row mx-auto mb-5">
 
-<div class="row mb-5">
-  <div class="col-md-3 mx-auto">
-  	<h4 class="schedule font-weight-bold">スケジュール登録</h4>
-    <%= form_with model: @schedule, url: admin_schedules_path, local: true do |f| %>
-      <div class="title">
-        <div class="form-tag">タイトル</div>
-        <%= f.text_field :title, class: "form-control" %>
-      </div>
-      <div class="content">
-        <div class="form-tag">内容</div>
-        <%= f.text_field :body, class: "form-control" %>
-      </div>
-      <div class="time mb-3">
-        <div class="form-tag">日時</div>
-        <%= f.datetime_select :start_time %>
-      </div>
-       <div class="submit text-center">
-          <%= f.submit "登録", class: "btn btn-dark px-4 mb-5" %>
-       </div>
-    <% end %>
-    
-  	<h4 class="schedule font-weight-bold">今後の予定一覧</h4>
-    <table class="table">
-      <thead class="thead-light">
-        <tr>
-          <th>日程</th>
-          <th>タイトル</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% @schedules.each do |schedule| %>
-          <tr>
-            <td><%= schedule.start_time.strftime("%m-%d") %></td>
-            <td><%= link_to schedule.title, schedule %></td>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
+  <div class="col-4 mx-auto">
+    <%= render '/admin/shared/schedule', schedules: Schedule.all, schedule: Schedule.new %>
   </div>
   
   <br>
   
   <br>
-  <div class="col-md-7 mx-auto">
+  <div class="col-8 mx-auto">
     <%= month_calendar events: @schedules do |date, schedules| %>
       <%= date.day %>
     
       <% schedules.each do |schedule| %>
         <div>
-          <%= link_to schedule.title, schedule %>
+          <%= link_to schedule.title, admin_schedule_path(schedule.id) %>
         </div>
       <% end %>
     <% end %>
   </div>
+</div>
 </div>
 
 <!--< %= @calendar_id %>-->

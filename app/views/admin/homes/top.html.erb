@@ -1,6 +1,11 @@
-<div class= "container">
-  <div class= "row my-3">
-    <div class= "col-12 my-3">
+ <div class="container">
+  <div class= "row mx-auto my-5">
+      
+  <div class="col-4 mx-auto">
+    <%= render '/admin/shared/schedule', schedules: Schedule.all, schedule: Schedule.new %>
+  </div>
+  
+  <div class= "col-8 my-3">
         
     <!--タブ部分-->
     <ul class="nav nav-tabs">
@@ -53,9 +58,9 @@
         </tbody>
     </table>
     </div>
-    <div class="col-12 mb-4 mt-3">
+    <div class="col-8 mb-4 mt-3">
       <div><%= paginate @inquiries %></div>
     </div>
-    </div>
   </div>
-</div>
+  </div>
+</div> 

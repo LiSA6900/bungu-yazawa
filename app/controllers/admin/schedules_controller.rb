@@ -11,8 +11,10 @@ class Admin::SchedulesController < ApplicationController
   end
   
   def create
-    Schedule.create(schedule_params)
-    redirect_to admin_schedule_path
+    @schedule = Schedule.new(schedule_params)
+    @schedule.admin_id = current_admin.id
+    @schedule.save
+    redirect_to admin_schedules_path
   end
   
   def show
@@ -22,7 +24,7 @@ class Admin::SchedulesController < ApplicationController
   def destroy
     @schedule = Schedule.find(params[:id])
     @schedule.destroy
-    redirect_to admin_schedule_path, success: "削除しました"
+    redirect_to admin_schedules_path, notice: "削除しました"
   end
   
   def edit
@@ -32,7 +34,7 @@ class Admin::SchedulesController < ApplicationController
   def update
     @schedule = Schedule.find(params[:id])
     if @schedule.update(schedule_params)
-      redirect_to admin_schedule_path, success: "編集しました"
+      redirect_to admin_schedule_path(@schedule.id), success: "編集しました"
     else
       render :edit
     end
