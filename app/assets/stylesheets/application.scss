@@ -10,10 +10,11 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require simple_calendar
  *= require_tree .
  *= require_self
  */
+ 
+ @import "simple_calendar";
 
 * {
   margin: 0;
@@ -162,10 +163,8 @@ p.align-self-center{
   height: 38px;
 }
 
-.table{
-    height: 50px;
-}
 
+    
 // simple-calendarのレイアウト
 .simple-calendar {
 
@@ -174,21 +173,39 @@ p.align-self-center{
   }
   
   .calendar-heading{
-    font-size: 25px;
+    margin-bottom: 5px;
     font-weight: bold;
+    .calendar-title{
+      font-size: 25px;
+      font-weight: bold;
+    }
+    a{
+      border: 2px solid #C0C0C0;
+      padding: 2px 5px;
+      text-decoration: none;
+    }
+  }
+  
+  thead{
+    background-color: rgba(0, 0, 0, 0);
   }
     
   .day {
     height: 130px;
   }
 
-  .wday-0 {}
+   // 日曜を赤に、土曜日を青にする
+  .wday-0 {
+    color: red;
+  }
   .wday-1 {}
   .wday-2 {}
   .wday-3 {}
   .wday-4 {}
   .wday-5 {}
-  .wday-6 {}
+  .wday-6 {
+    color: blue;
+  }
 
   .today {}
   .past {}
