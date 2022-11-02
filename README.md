@@ -28,6 +28,17 @@
 ## 設計書
 -  実装機能リストのURL
 https://docs.google.com/spreadsheets/d/1AK5wtl7kxq7yVGnTE8eRq62Y10hZDCpV1q__2S13hh0/edit#gid=375590402
+-  UI-FlowsのURL
+https://app.diagrams.net/#G13YWgLnrlUpT9VV1PHOeoPaK0sIWfPwCD
+-  テーブル定義書のURL
+https://docs.google.com/spreadsheets/d/1c0NK6BbVrdquHWcWYg0IzTCID-GUMptQqYDyG2N-Jb4/edit#gid=0
+-  ワイヤーフレームのURL
+【ユーザー】https://app.diagrams.net/#G1Y7aXyB21ZdJ2ogNS6k4By8kd_E7Trzqi
+【管理者】https://app.diagrams.net/#G1V1DdR7mFHhO7J1Fodj3ISKdsJg9Z0EHW
+-  ER図のURL
+https://app.diagrams.net/#G1jZLv_ymjHsOKb4wCrTrQsr5664XteQwY
+-  アプリケーションの詳細設計のURL
+https://docs.google.com/spreadsheets/d/1bsmyChykmEAaZS4kNDtEPv8gKb9D5QE5mpPkVlbsuio/edit#gid=0
 
 ## 開発環境
 - 言語：HTML,CSS,JavaScript,Ruby,SQL
