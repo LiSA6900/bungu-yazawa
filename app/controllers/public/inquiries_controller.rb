@@ -10,6 +10,7 @@ class Public::InquiriesController < ApplicationController
     @inquiry = Inquiry.new(inquiry_params)
     @inquiry.customer_id = current_customer.id
     if @inquiry.save
+      InquiryMailer.sendmail_inquiry(@inquiry).deliver # ここで呼び出している
       redirect_to inquiries_path
     else
       flash[:alart] = "※必須項目を入力してください。"

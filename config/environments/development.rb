@@ -37,7 +37,7 @@ Rails.application.configure do
   config.active_storage.service = :local
 
   # Don't care if the mailer can't send.
-  config.action_mailer.raise_delivery_errors = false
+  # config.action_mailer.raise_delivery_errors = false
 
   config.action_mailer.perform_caching = false
 
@@ -80,5 +80,24 @@ Rails.application.configure do
   config.hosts << "66427f89fd0549c6baf4beba59e779c8.vfs.cloud9.ap-northeast-1.amazonaws.com"
   
   config.active_job.queue_adapter = :inline
+  
+   # smtpで実際にメール送信させる
+  config.action_mailer.delivery_method = :smtp
+  # config.action_mailer.delivery_method = :letter_opener
+  
+   # メールテンプレートはviewと違ってURLヘルパーを使ってもドメインが取得できず、メール本文にURLを載せられないので、その対策をする
+  config.action_mailer.default_url_options = {:host => 'localhost:3000'}
+  
+  config.action_mailer.smtp_settings = {
+     :enable_starttls_auto => true,
+     :address => 'smtp.gmail.com',
+     :port => 587,
+     :domain => 'gmail.com',
+     :authentication => :plain,
+     # 本当に飛ばす場合(letter_openerを使わない場合)は、Gmailのメールアドレスが必要(参照している)
+     :user_name => Rails.application.credentials.gmail[:mail_address],
+     # 本当に飛ばす場合(letter_openerを使わない場合)は、Gmailのアプリパスワードが必要(参照している)
+     :password => Rails.application.credentials.gmail[:app_password]
+ }
   
 end
