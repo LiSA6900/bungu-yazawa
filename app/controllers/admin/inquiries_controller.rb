@@ -24,7 +24,7 @@ class Admin::InquiriesController < ApplicationController
   def update
     @inquiry = Inquiry.find(params[:id]) 
     @inquiry.update(inquiry_params)
-    flash[:success] = "ステータスを更新しました。"
+    flash.now[:success] = "ステータスを更新しました。"
     render :show
   end
   

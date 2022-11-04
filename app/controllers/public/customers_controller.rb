@@ -15,6 +15,7 @@ class Public::CustomersController < ApplicationController
       if @customer.update(customer_params)
         redirect_to customers_my_page_path
       else
+        flash.now[:alart] = "入力内容に不備がございます。全ての項目へ入力をお願いします。"
         render :edit
       end
     end
