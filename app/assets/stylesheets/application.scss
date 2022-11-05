@@ -238,30 +238,30 @@ thead{
 
 
 @media (min-width: 769px){
-    p.align-self-center{
-        text-align: left;
-        
-    }
-    .hamburger-menu {
-      display: none;
-    }
+  p.align-self-center{
+    text-align: left;
+  }
+  
+  .hamburger-menu {
+    display: none;
+  }
 }
 
 @media (max-width: 768px){
-    
-    .header-menu {
-      display: none;
-    }
-    
-    .navbar {
+  .header-menu {
+    display: none;
+  }
+  
+  .navbar {
     position: relative;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: end;
     padding: 0.5rem 1rem;
-}
-    .nav-item{
-        text-align: right;
-    }
+  }
+
+  .nav-item{
+    text-align: right;
+  }
 }
