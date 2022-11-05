@@ -167,6 +167,14 @@ p.align-self-center{
   height: 50px;
 }
 
+thead{
+  border-bottom: 3px solid #dee2e6;
+}
+
+.table thead th {
+  border-top: 0px; //管理者の今後のスケジュール一覧のborder-top消す
+}
+
 .thead-light{
   color: #495057;
   background-color: white;
@@ -234,15 +242,15 @@ p.align-self-center{
         text-align: left;
         
     }
-    .shadow-sm {
-        display: none;
+    .hamburger-menu {
+      display: none;
     }
 }
 
 @media (max-width: 768px){
     
-    ul.navbar-nav {
-        display: none;
+    .header-menu {
+      display: none;
     }
     
     .navbar {

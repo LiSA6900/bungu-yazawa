@@ -13,7 +13,7 @@ class Public::InquiriesController < ApplicationController
       InquiryMailer.sendmail_inquiry(@inquiry).deliver # ここで呼び出している
       redirect_to inquiries_path
     else
-      flash.now[:alart] = "※必須項目を入力してください。"
+      flash.now[:alart] = "必須項目を入力してください。"
       render :new
     end
   end

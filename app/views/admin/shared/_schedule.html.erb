@@ -1,10 +1,10 @@
 <div class="mr-5">
   <h4 class="schedule font-weight-bold">今後の予定一覧</h4>
   <table class="table mb-5">
-    <thead class="thead-light">
+    <thead>
       <tr>
-        <th>日程</th>
-        <th>タイトル</th>
+        <th class="thead-light">日程</th>
+        <th class="thead-light">タイトル</th>
       </tr>
     </thead>
     <tbody>
@@ -22,16 +22,16 @@
   <h4 class="schedule font-weight-bold">スケジュール登録</h4>
   <%= form_with model: schedule, url: admin_schedules_path, local: true do |f| %>
     <div class="title">
-      <div class="form-tag">タイトル</div>
-      <%= f.text_field :title, class: "form-control" %>
+      <div class="form-tag">タイトル<span class="alart">【必須】</span></div>
+      <%= f.text_field :title, class: "form-control mb-2" %>
     </div>
     <div class="content">
       <div class="form-tag">内容</div>
-      <%= f.text_field :body, class: "form-control" %>
+      <%= f.text_field :body, class: "form-control mb-2" %>
     </div>
     <div class="time mb-3">
-      <div class="form-tag">日時</div>
-      <%= f.datetime_select :start_time %>
+      <div class="form-tag">日時<span class="alart">【必須】</span></div>
+      <%= f.datetime_select :start_time, class: "mb-2" %>
     </div>
      <div class="submit text-center">
         <%= f.submit "新規登録", class: "btn btn-dark px-5" %>

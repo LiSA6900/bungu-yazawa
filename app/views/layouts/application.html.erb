@@ -12,8 +12,8 @@
   </head>
 
   <body class="d-flex flex-column vh-100">
-    <header class="shadow-sm">
-      <div class="pos-f-t">
+    <header>
+      <div class="hamburger-menu shadow-sm pos-f-t">
         <div class="collapse" id="navbarToggleExternalContent">
           <ul class="mr-auto"> 
           <% if customer_signed_in? %>
@@ -65,9 +65,7 @@
           </button>
         </nav>
       </div>
-    </header>
-    
-    <header>
+
       <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container">
           <a class="navbar-brand p-3" href="/">
@@ -81,7 +79,7 @@
           </div>
 
           <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav ml-auto"> 
+            <ul class="header-menu navbar-nav ml-auto"> 
             <% if customer_signed_in? %>
               <li class="nav-item">
                 <%= link_to "お問合せフォーム", new_inquiry_path, class: "nav-link text-dark" %>

@@ -36,6 +36,7 @@ class Admin::SchedulesController < ApplicationController
     if @schedule.update(schedule_params)
       redirect_to admin_schedule_path(@schedule.id)
     else
+      flash.now[:alart] = "必須項目を入力してください。"
       render :edit
     end
   end
