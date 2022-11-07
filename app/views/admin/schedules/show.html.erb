@@ -14,16 +14,16 @@
     <table class="mx-auto font-weight-bold">
       <tbody>
         <tr>
-          <td class="table col-3">タイトル :</td>
-          <td class="table col-4"><%= @schedule.title %></td>
-        </tr>
-        <tr>
           <td class="table col-3">日 程 :</td>
           <td class="table col-4"><%= @schedule.start_time.strftime("%Y/%m/%d") %></td>
         </tr>
         <tr>
           <td class="table col-3">時 間 :</td>
           <td class="table col-4"><%= @schedule.start_time.strftime("%H:%M") %></td>
+        </tr>
+        <tr>
+          <td class="table col-3">タイトル :</td>
+          <td class="table col-4"><%= @schedule.title %></td>
         </tr>
         <tr>
           <td class="table col-3">内 容 :</td>
