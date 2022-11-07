@@ -39,6 +39,8 @@ https://docs.google.com/spreadsheets/d/1c0NK6BbVrdquHWcWYg0IzTCID-GUMptQqYDyG2N-
 https://app.diagrams.net/#G1jZLv_ymjHsOKb4wCrTrQsr5664XteQwY
 -  アプリケーションの詳細設計のURL
 https://docs.google.com/spreadsheets/d/1bsmyChykmEAaZS4kNDtEPv8gKb9D5QE5mpPkVlbsuio/edit#gid=0
+-  テスト仕様書のURL
+https://docs.google.com/spreadsheets/d/1h4-7xxhuCy17MBlI0lpW2Qis4ZrbBQw1/edit#gid=1511467858
 
 ## 開発環境
 - 言語：HTML,CSS,JavaScript,Ruby,SQL
