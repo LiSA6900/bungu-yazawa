@@ -52,14 +52,16 @@ group :test do
   gem 'image_processing', '~>1.2'
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
+  # テストのためにRSpecをインストールする
+  gem 'rspec-rails'
+  gem "factory_bot_rails"
+  gem 'faker'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'devise'
-
-gem "net-smtp"
 
 gem "enum_help"
 
@@ -75,4 +77,9 @@ gem 'simple_calendar', '~> 2.0'
 
 group :development do
   gem 'letter_opener'
+  
+
+gem "net-smtp"
+
 end
+
