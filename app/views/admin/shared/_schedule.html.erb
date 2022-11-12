@@ -1,5 +1,5 @@
 <div class="mr-5">
-  <h4 class="schedule font-weight-bold">今後の予定一覧</h4>
+  <h4 class="schedule font-weight-bold">今日の予定</h4>
   <table class="table mb-5">
     <thead>
       <tr>
@@ -8,10 +8,10 @@
       </tr>
     </thead>
     <tbody>
-      <% schedules.each do |schedule| %>
+      <% today_schedules.each do |today_schedule| %>
         <tr>
-          <td><%= schedule.start_time.strftime("%m/%d") %></td>
-          <td><%= link_to schedule.title, admin_schedule_path(schedule.id) %></td>
+          <td><%= today_schedule.start_time.strftime("%m/%d") %></td>
+          <td><%= link_to today_schedule.title, admin_schedule_path(schedule.id) %></td>
         </tr>
       <% end %>
     </tbody>
