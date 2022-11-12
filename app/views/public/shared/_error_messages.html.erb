@@ -1,5 +1,22 @@
+<!--< %if resource.errors.any? %>-->
+<!--  <div id="error_explanation">-->
+<!--    <p class= "alart text-center">すでに登録済みの情報のため別の情報にてご登録をお願いします。</p>-->
+<!--  </div>-->
+<!--< %end %>-->
+
+
 <% if resource.errors.any? %>
   <div id="error_explanation">
-    <p class= "alart text-center">すでに登録済みの情報のため別の情報にてご登録をお願いします。</p>
+    <!--<h2>-->
+    <!--  <　%= I18n.t("errors.messages.not_saved",-->
+    <!--             count: resource.errors.count,-->
+    <!--             resource: resource.class.model_name.human.downcase)-->
+    <!--   %>-->
+    <!--</h2>-->
+    <ul>
+      <% resource.errors.full_messages.each do |message| %>
+        <li class="error_messages"><%= message %></li>
+      <% end %>
+    </ul>
   </div>
 <% end %>

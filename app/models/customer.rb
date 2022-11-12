@@ -11,11 +11,14 @@ class Customer < ApplicationRecord
   
   validates :last_name, presence: true
   validates :first_name, presence: true
-  validates :last_name_kana, presence: true
-  validates :first_name_kana, presence: true
-  validates :postal_code, presence: true
+  katakana = /\A[ァ-ヶー－]+\z/ # 全角カタカナ
+  validates :last_name_kana, presence: true, format: { with: katakana }
+  validates :first_name_kana, presence: true, format: { with: katakana }
+  postal_code = /\A\d{7}\z/ # 郵便番号（半角、ハイフンなし7桁）
+  validates :postal_code, presence: true, format: { with: postal_code }
   validates :address, presence: true
-  validates :telephone_number, presence: true
+  telephone_number = /\A\d{10,11}\z/ # 電話番号(ハイフンなし10桁or11桁)
+  validates :telephone_number, presence: true, format: { with: telephone_number }
 
   
   #ゲストログインをするための新規登録のデータ登録

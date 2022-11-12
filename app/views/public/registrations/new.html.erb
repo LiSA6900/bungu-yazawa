@@ -2,6 +2,7 @@
   <div class= "row my-3 py-2">
     <div class= "col-12 my-3">
       <h2 class= "text-center font-weight-bold">新規会員登録</h2>
+      <p class= "alart text-center"><strong>※全ての項目へ入力してください。</strong></p>
       <p class= "alart text-center"><%= flash[:notice] %></p>
     </div>
 
@@ -20,7 +21,7 @@
               <td><%= f.text_field :first_name, autofocus: true, autocomplete: "first_name", placeholder: "名", class: "form-control mb-2 mx-4" %></td>
             </tr>
             <tr>
-              <td>フリガナ</td>
+              <td>フリガナ(全角カタカナ)</td>
               <td></td>
             </tr>
             <tr>
@@ -28,11 +29,11 @@
               <td><%= f.text_field :first_name_kana, autofocus: true, autocomplete: "first_name_kana", placeholder: "メイ", class: "form-control mb-2 mx-4" %></td>
             </tr>
             <tr>
-              <td>郵便番号</td>
+              <td>郵便番号(半角、ハイフンなし)</td>
               <td></td>
             </tr>
             <tr>
-              <td><%= f.text_field :postal_code, autofocus: true, autocomplete: "postal_code", placeholder: "123-4567", class: "form-control mb-2" %></td>
+              <td><%= f.text_field :postal_code, autofocus: true, autocomplete: "postal_code", placeholder: "1234567", class: "form-control mb-2" %></td>
               <td></td>
             </tr>
             <tr>
@@ -44,11 +45,11 @@
               <td></td>
             </tr>
             <tr>
-              <td>電話番号</td>
+              <td>電話番号(半角、ハイフンなし)</td>
               <td></td>
             </tr>
             <tr>
-              <td><%= f.text_field :telephone_number, autofocus: true, autocomplete: "telephone_number", placeholder: "080-1234-5678", class: "form-control mb-2" %></td>
+              <td><%= f.text_field :telephone_number, autofocus: true, autocomplete: "telephone_number", placeholder: "08012345678", class: "form-control mb-2" %></td>
               <td></td>
             </tr>
             <tr>

@@ -44,6 +44,47 @@ ja:
         errors:
             messages:
                 record_invalid: "バリデーションに失敗しました: %{errors}"
+            models:
+                customer:
+                    attributes:
+                        email:
+                            blank: "を入力してください"
+                            taken: "はすでに登録済みです。他のメールアドレスをご入力ください。"
+                        password:
+                            blank: "を入力してください。"
+                        last_name:
+                            blank: "を入力してください。"
+                        first_name:
+                            blank: "を入力してください。"
+                        last_name_kana:
+                            blank: "を入力してください。"
+                            invalid: "を全角カタカナで入力してください。"
+                        first_name_kana:
+                            blank: "を入力してください。"
+                            invalid: "を全角カタカナで入力してください。"
+                        postal_code:
+                            blank: "を入力してください。"
+                            invalid: "をハイフンなし(7桁)で入力してください。"
+                        address:
+                            blank: "を入力してください。"
+                        telephone_number:
+                            blank: "を入力してください。"
+                            invalid: "をハイフンなし(10桁or11桁)で入力してください。"
+                            
+        models:
+            customer: "会員"
+        attributes:
+            customer:
+                email: "メールアドレス"
+                password: "パスワード"
+                last_name: "姓"
+                first_name: "名"
+                last_name_kana: "セイ"
+                first_name_kana: "メイ"
+                postal_code: "郵便番号"
+                address: "住所"
+                telephone_number: "電話番号"
+                        
                 
     simple_calendar:
         previous: "<<"
