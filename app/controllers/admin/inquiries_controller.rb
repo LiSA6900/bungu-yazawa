@@ -14,6 +14,7 @@ class Admin::InquiriesController < ApplicationController
     @inquiries_order_received = inquiries.order_received.page(params[:page])
     @inquiries_done = inquiries.done.page(params[:page])
     @inquiries = inquiries.page(params[:page])
+    @search_word = params[:search]
     render :"admin/homes/top"
   end
   

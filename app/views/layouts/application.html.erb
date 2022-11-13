@@ -133,7 +133,8 @@
         <div>
           <%= form_with url: admin_search_path, method: :get do |f| %>
             <div class="form-group row">
-              <%= f.text_field :search, class: "form-control offset-sm-8 col-sm-3" %>
+              <!--value: params[:search]をつけると検索後もフォームに値を保持できる-->
+              <%= f.text_field :search, value: params[:search], class: "form-control offset-sm-8 col-sm-3" %>
               <div class="button col-sm-1">
                 <%= f.button :type => "submit", :name => nil, style: "border:none;background:none;" do %>
                   <i class="fas fa-search custom-size-l"></i>

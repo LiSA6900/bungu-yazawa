@@ -6,7 +6,12 @@
   </div>
   
   <div class= "col-8 my-3">
-        
+    <% if @search_word && @search_word.present? %>
+      <h2><strong><%= @search_word %></strong> の検索結果</h2>
+        <% if @inquiries.count == 0 %>
+          <h2>検索結果はありません</h2>
+        <% end %>
+    <% end %>
     <!--タブ部分-->
     <ul class="nav nav-tabs">
         <li class="tab tab-active nav-item px-4 py-1 font-weight-bold">

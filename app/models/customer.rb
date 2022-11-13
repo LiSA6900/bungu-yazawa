@@ -9,15 +9,17 @@ class Customer < ApplicationRecord
   has_many :active_notifications, class_name: 'Notification', foreign_key: 'visitor_id', dependent: :destroy
   
   
+  password = /\A(?=.*[A-Z])[a-zA-Z0-9]+\z/ # 半角英数字（大文字・小文字・数字）&少なくとも大文字が一つ含まれる
+  validates :password, presence:true, format: { with: password }
   validates :last_name, presence: true
   validates :first_name, presence: true
   katakana = /\A[ァ-ヶー－]+\z/ # 全角カタカナ
   validates :last_name_kana, presence: true, format: { with: katakana }
   validates :first_name_kana, presence: true, format: { with: katakana }
-  postal_code = /\A\d{7}\z/ # 郵便番号（半角、ハイフンなし7桁）
+  postal_code = /\A\d{7}\z/ # 半角、ハイフンなし7桁
   validates :postal_code, presence: true, format: { with: postal_code }
   validates :address, presence: true
-  telephone_number = /\A\d{10,11}\z/ # 電話番号(ハイフンなし10桁or11桁)
+  telephone_number = /\A\d{10,11}\z/ # 半角、ハイフンなし10桁or11桁
   validates :telephone_number, presence: true, format: { with: telephone_number }
 
   
