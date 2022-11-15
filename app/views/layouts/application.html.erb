@@ -51,10 +51,12 @@
               <%= link_to "TOP", root_path, class: "nav-link text-dark" %>
             </li>
             <li class="nav-item">
-              <%= link_to "新規会員登録", new_customer_registration_path, class: "nav-link text-dark" %>
+              <!--RSpecで新規登録のテストするためにidを追加-->
+              <%= link_to "新規会員登録", new_customer_registration_path, class: "nav-link text-dark", id: "signup" %>
             </li>
             <li class="nav-item">
-              <%= link_to "ログイン", new_customer_session_path, class: "nav-link text-dark" %>
+              <!--RSpecでログインのテストするためにidを追加-->
+              <%= link_to "ログイン", new_customer_session_path, class: "nav-link text-dark", id: "login" %>
             </li>
           <% end %>
         </div>

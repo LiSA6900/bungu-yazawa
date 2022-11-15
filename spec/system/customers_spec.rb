@@ -4,9 +4,36 @@ require 'rails_helper'
 
 RSpec.feature "Tasks", type: :feature do
   
+  describe '新規会員登録のテスト' do
+    
+    it '正常に新規会員登録ができるか' do
+
+    # トップページへアクセス
+    visit root_path
+    # 新規会員登録画面へ遷移
+    click_link 'signup'
+    
+    # 登録情報を入力し、新規登録ボタンをクリック
+    fill_in "customer[last_name]", with: "山田"
+    fill_in "customer[first_name]", with: "太郎"
+    fill_in "customer[last_name_kana]", with: "ヤマダ"
+    fill_in "customer[first_name_kana]", with: "タロウ"
+    fill_in "customer[postal_code]", with: "0000000"
+    fill_in "customer[address]", with: "静岡県静岡市葵区0-0"
+    fill_in "customer[telephone_number]", with: "08012345678"
+    fill_in "customer[email]", with: "test@test.com"
+    fill_in "customer[password]", with: "Abcdef"
+    click_button "新規登録"
+
+    # 新規会員登録後に下記の文字列が存在（表示）するか
+    expect(page).to have_content "ログアウト"
+    end
+  end
+  
+  
   describe 'ユーザーログインのテスト' do
     # before do
-    #   @customer = FactoryBot.create(:customer)
+      # @customer = FactoryBot.create(:customer)
     # end
     
     it '正常にログインができるか' do
@@ -26,16 +53,16 @@ RSpec.feature "Tasks", type: :feature do
       
       # トップページへアクセス
       visit root_path
-      
       # ログインページへ遷移
-      click_link 'ログイン'
+      click_link 'login'
       
       # メールアドレスとパスワードを入力
-      fill_in 'Email', with: @customer.email
-      fill_in 'Password', with: @customer.password
+      fill_in 'customer[email]', with: @customer.email
+      fill_in 'customer[password]', with: @customer.password
       click_button 'ログイン'
       
-      expect(page).to have_content '"ようこそ"+ @customer.last_name +"さん"', 'ログアウト'
+      # ログイン後の画面に下記の文字列が存在（表示）するか
+      expect(page).to have_content("ようこそ、"+@customer.last_name+"さん")
     end
   end
 

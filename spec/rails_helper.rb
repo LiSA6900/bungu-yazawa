@@ -63,5 +63,5 @@ RSpec.configure do |config|
   # config.filter_gems_from_backtrace("gem name")
 # letを使用したときにFactoryBotが使用できるように設定
 config.include FactoryBot::Syntax::Methods
-config.include Devise::TestHelpers, :type => :controller
+# config.include Devise::TestHelpers, :type => :controller
 end
