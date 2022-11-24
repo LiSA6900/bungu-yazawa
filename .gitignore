@@ -42,3 +42,5 @@ yarn-debug.log*
 # google_calendarの設定
 ; .env
 ; /google-cal/client_secret.json
+
+/.env
