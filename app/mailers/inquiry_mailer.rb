@@ -6,7 +6,7 @@ class InquiryMailer < ApplicationMailer
   def sendmail_inquiry(inquiry)
     @inquiry = inquiry
     if Rails.env.production?
-      @log_in_url = "http://本番url"
+      @log_in_url = "http://bungu-yazawa.shop/admin/sign_in"
     else
       @log_in_url = "https://66427f89fd0549c6baf4beba59e779c8.vfs.cloud9.ap-northeast-1.amazonaws.com/admin/sign_in"
     end
