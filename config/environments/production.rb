@@ -123,7 +123,7 @@ Rails.application.configure do
   # config.action_mailer.delivery_method = :letter_opener
 
   # メールテンプレートはviewと違ってURLヘルパーを使ってもドメインが取得できず、メール本文にURLを載せられないので、その対策をする
-  config.action_mailer.default_url_options = {:host => 'localhost:3000'}
+  config.action_mailer.default_url_options = {:host => 'http://bungu-yazawa.shop'}
 
   config.action_mailer.smtp_settings = {
      :enable_starttls_auto => true,
