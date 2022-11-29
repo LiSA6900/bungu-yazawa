@@ -26,7 +26,13 @@ class Customer < ApplicationRecord
   #ゲストログインをするための新規登録のデータ登録
   def self.guest
     find_or_create_by!(email: 'guest@test.com') do |customer|
-      customer.password = SecureRandom.urlsafe_base64
+      customer.password = [
+      # SecureRandom.urlsafe_base64
+        [*0..9].sample(2),
+        [*'a'..'z'].sample(2),
+        [*'A'..'Z'].sample(2),
+      ].sum([]).shuffle.join
+      
       # customer.customer_id = 1
       customer.last_name = 'ゲスト'
       customer.first_name = 'さん'
