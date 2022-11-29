@@ -32,9 +32,9 @@ class Customer < ApplicationRecord
       customer.first_name = 'さん'
       customer.last_name_kana = 'ゲスト'
       customer.first_name_kana = 'サン'
-      customer.postal_code = '000-0000'
+      customer.postal_code = '0000000'
       customer.address = 'サンプル0-0'
-      customer.telephone_number = '000-0000-0000'
+      customer.telephone_number = '00000000000'
     end
   end
   
