@@ -82,16 +82,6 @@ ActiveRecord::Schema.define(version: 2022_10_15_130452) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "notifications", force: :cascade do |t|
-    t.integer "visiter_id", null: false
-    t.integer "visited_id", null: false
-    t.integer "inquiry_id", null: false
-    t.string "action", null: false
-    t.boolean "checked", default: false, null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "schedules", force: :cascade do |t|
     t.integer "admin_id", null: false
     t.datetime "start_time", null: false
