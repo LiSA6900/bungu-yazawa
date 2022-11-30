@@ -10,7 +10,7 @@ class Customer < ApplicationRecord
   
   
   password = /\A(?=.*[A-Z])[a-zA-Z0-9]+\z/ # 半角英数字（大文字・小文字・数字）&少なくとも大文字が一つ含まれる
-  validates :password, presence:true, format: { with: password }
+  validates :password, presence:true, format: { with: password }, on: :create
   validates :last_name, presence: true
   validates :first_name, presence: true
   katakana = /\A[ァ-ヶー－]+\z/ # 全角カタカナ
@@ -47,5 +47,6 @@ class Customer < ApplicationRecord
   # is_deletedがfalseならtrueを返すようにしている
   def active_for_authentication?
     super &&  (is_deleted == false)
+
   end
 end

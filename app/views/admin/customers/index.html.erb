@@ -2,7 +2,7 @@
   <div class= "row mx-auto my-3">
 
   <div class="col-4 mx-auto">
-    <%= render '/admin/shared/schedule', schedules: Schedule.all, schedule: Schedule.new, today_schedules: Schedule.where(created_at: Time.zone.now.all_day)  %>
+    <%= render '/admin/shared/schedule', schedules: Schedule.all, schedule: Schedule.new %>
   </div>      
 
     <div class= "col-8 my-3">
