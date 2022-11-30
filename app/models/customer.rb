@@ -5,9 +5,6 @@ class Customer < ApplicationRecord
          :recoverable, :rememberable, :validatable
   
   has_many :inquiries, dependent: :destroy
-  # active_notifications：自分からの通知。ユーザーを削除したとき、同時に通知も削除したいので、 dependent: :destroyを追加。
-  has_many :active_notifications, class_name: 'Notification', foreign_key: 'visitor_id', dependent: :destroy
-  
   
   password = /\A(?=.*[A-Z])[a-zA-Z0-9]+\z/ # 半角英数字（大文字・小文字・数字）&少なくとも大文字が一つ含まれる
   validates :password, presence:true, format: { with: password }, on: :create

@@ -55,7 +55,7 @@ group :test do
   gem 'webdrivers'
   # テストのためにRSpecをインストールする
   gem 'rspec-rails'
-  gem "factory_bot_rails"
+  gem 'factory_bot_rails'
   gem 'faker'
   gem 'gimei'
 end
