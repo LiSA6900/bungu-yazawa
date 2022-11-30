@@ -14,7 +14,7 @@
     <% end %>
     <!--タブ部分-->
     <ul class="nav nav-tabs">
-        <li class="tab nav-item px-4 py-1 font-weight-bold">
+        <li class="tab tab-active nav-item px-4 py-1 font-weight-bold">
             未確認</br>
             <%= @inquiries_unconfirmed.count %>件
         </li>
@@ -30,7 +30,7 @@
             対応済</br>
             <%= @inquiries_done.count %>件
         </li>
-        <li class="tab tab-active nav-item px-4 py-1 font-weight-bold">
+        <li class="tab nav-item px-4 py-1 font-weight-bold">
             一覧</br>
             <%= @inquiries.count %>件
         </li>
