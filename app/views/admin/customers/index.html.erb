@@ -6,39 +6,36 @@
   </div>      
 
     <div class= "col-8 my-3">
-    <h2 class="ml-2 font-weight-bold">会員一覧</h2>
-    <table class= "w-100 table-boder">
-        <thead class= "table-boder">
-            <tr>
-                <th class= "list text-center", style="width:15%;">会員ID</th>
-                <th class= "list text-center", style="width:15%;">氏名</th>
-                <th class= "list text-center", style="width:40%;">メールアドレス</th>
-                <th class= "list text-center", style="width:15%;">ステータス</th>
-                <th class= "list text-center", style="width:15%;"></th>
-            </tr>
-        </thead>
-        <tbody>
-            <% @customers.each do |customer| %>    
+        <h2 class="ml-2 font-weight-bold">会員一覧</h2>
+        <table class= "w-100 table-boder">
+            <thead class= "table-boder">
                 <tr>
-                    <th class= "list text-center"><%= customer.id %></th>
-                    <th class= "list text-center"><%= customer.last_name %><%= customer.first_name %></th>
-                    <th class= "list text-center"><%= customer.email %></th>
-                    <th class= "list text-center">
-                        <% if customer.is_deleted != true %>
-                            <span style= "color: green;", class: "font-weight-bold">有効</span>
-                        <% else %>
-                            <span style= "color: #C0C0C0;", class: "font-weight-bold">退会</span>
-                        <% end %>
-                    </th>
-                    <th class= "list text-center"><%= link_to "詳細", admin_customer_path(customer.id), class: "btn btn-dark px-3" %></th>
+                    <th class= "list text-center", style="width:15%;">会員ID</th>
+                    <th class= "list text-center", style="width:15%;">氏名</th>
+                    <th class= "list text-center", style="width:40%;">メールアドレス</th>
+                    <th class= "list text-center", style="width:15%;">ステータス</th>
+                    <th class= "list text-center", style="width:15%;"></th>
                 </tr>
-            <% end %>
-        </tbody>
-    </table>
-    </div>
-    <div class="col-8 mb-4 mt-3">
-      <div><%= paginate @customers %></div>
-    </div>
+            </thead>
+            <tbody>
+                <% @customers.each do |customer| %>    
+                    <tr>
+                        <th class= "list text-center"><%= customer.id %></th>
+                        <th class= "list text-center"><%= customer.last_name %><%= customer.first_name %></th>
+                        <th class= "list text-center"><%= customer.email %></th>
+                        <th class= "list text-center">
+                            <% if customer.is_deleted != true %>
+                                <span style= "color: green;", class: "font-weight-bold">有効</span>
+                            <% else %>
+                                <span style= "color: #C0C0C0;", class: "font-weight-bold">退会</span>
+                            <% end %>
+                        </th>
+                        <th class= "list text-center"><%= link_to "詳細", admin_customer_path(customer.id), class: "btn btn-dark px-3" %></th>
+                    </tr>
+                <% end %>
+            </tbody>
+        </table>
+        <div><%= paginate @customers %></div>
     </div>
   </div>
 </div>
