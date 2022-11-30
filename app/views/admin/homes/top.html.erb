@@ -47,9 +47,6 @@
             </tr>
         </thead>
         <!--タブで選択された要素部分-->
-        <tbody class="tabbox box-show">
-            <%= render 'admin/shared/inquiry', inquiries: @inquiries %>
-        </tbody>
         <tbody class="tabbox">
             <%= render 'admin/shared/inquiry', inquiries: @inquiries_unconfirmed %>
         </tbody>
@@ -61,6 +58,9 @@
         </tbody>
         <tbody class="tabbox">
             <%= render 'admin/shared/inquiry', inquiries: @inquiries_done %>
+        </tbody>
+        <tbody class="tabbox box-show">
+            <%= render 'admin/shared/inquiry', inquiries: @inquiries %>
         </tbody>
     </table>
   </div>
