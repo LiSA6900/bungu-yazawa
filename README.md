@@ -25,6 +25,10 @@
 - 管理者が仕事の対応状況を管理・確認したい時
 - 管理者が受注した案件の納期などをスケジュール管理・確認したい時
 
+### サイトURL
+【ユーザー】http://bungu-yazawa.shop/
+【管理者】http://bungu-yazawa.shop/admin/sign_in
+
 ## 設計書
 -  実装機能リストのURL
 https://docs.google.com/spreadsheets/d/1AK5wtl7kxq7yVGnTE8eRq62Y10hZDCpV1q__2S13hh0/edit#gid=375590402
