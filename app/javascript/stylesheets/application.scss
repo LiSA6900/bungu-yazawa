@@ -1,11 +1,12 @@
 @import '~bootstrap/scss/bootstrap';
 
-@import "simple_calendar";
+
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+
 }
 
 .nav-item{
@@ -217,7 +218,9 @@ thead{
     color: blue;
   }
 
-  .today {}
+  .today {
+    background-color: #FFFF99;
+  }
   .past {}
   .future {}
 
@@ -228,6 +231,12 @@ thead{
   .current-month {}
 
   .has-events {}
+}
+
+
+
+.simple-calendar .day {
+  width: 100px;
 }
 
 

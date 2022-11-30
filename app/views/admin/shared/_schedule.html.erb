@@ -8,7 +8,8 @@
       </tr>
     </thead>
     <tbody>
-      <% today_schedules.each do |today_schedule| %>
+     
+      <% Schedule.where(start_time: Time.zone.now.all_day).each do |today_schedule| %>
         <tr>
           <td><%= today_schedule.start_time.strftime("%H:%M") %></td>
           <td><%= link_to today_schedule.title, admin_schedule_path(today_schedule.id) %></td>
