@@ -27,12 +27,12 @@
               <% p image %>
                 <% if image.content_type.include?("pdf") %>
                 <!--{target: "_blank", rel: "noopener noreferrer"}を入れるとファイルを表示する際に別タブで開けるようになる-->
-                  <%= link_to image.filename, image, {target: "_blanåk", rel: "noopener noreferrer"} %></br>
+                  <%= link_to image.filename, image, {target: "_blanåk", rel: "noopener noreferrer"} %><br>
                 <% elsif image.content_type.include?("sheet") %>
-                  <%= link_to image.filename, image %></br>
+                  <%= link_to image.filename, image %><br>
                 <% else %>
                 <!--width => "300"等で指定してもOK-->
-                  <%= image_tag image,:width => "90%" %></br>
+                  <%= image_tag image,:width => "90%" %><br>
                 <% end %>
               <% end %>
             </td>

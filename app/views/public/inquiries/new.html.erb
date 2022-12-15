@@ -7,15 +7,15 @@
     <div class= "col-5 form-group mx-auto">
       <%= form_with model: @inquiry, url:inquiries_path, method: :post do |f| %>
         <div class="field mb-4 font-weight-bold">
-          <%= f.label :件名 %><span class="alart">【必須】</span><br />
+          <%= f.label :件名 %><span class="alart">【必須】</span><br>
           <%= f.text_field :title, class: "form-control" %>
         </div>
         <div class="field mb-4 font-weight-bold">
-          <%= f.label :お問合せ内容 %><span class="alart">【必須】</span><br />
+          <%= f.label :お問合せ内容 %><span class="alart">【必須】</span><br>
           <%= f.text_area :body, class: "form-control", style: "height: 200px;" %>
         </div>
         <div class="field mb-4 font-weight-bold">
-          <%= f.label :参考ファイル %><strong></%>【任意】</strong><br />
+          <%= f.label :参考ファイル %><strong></%>【任意】</strong><br>
            <!--multiple: trueにすることで画像を一度に複数選択出来る-->
           <%= f.file_field :images, multiple: true %>
           <!--accept: "image/*"を入れちゃうと画像しか送れないけど入れなければエクセルなどのファイルも送れる-->

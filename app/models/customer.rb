@@ -30,7 +30,6 @@ class Customer < ApplicationRecord
         [*'A'..'Z'].sample(2),
       ].sum([]).shuffle.join
       
-      # customer.customer_id = 1
       customer.last_name = 'ゲスト'
       customer.first_name = 'さん'
       customer.last_name_kana = 'ゲスト'

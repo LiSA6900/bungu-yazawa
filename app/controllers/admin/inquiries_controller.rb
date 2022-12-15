@@ -5,9 +5,6 @@ class Admin::InquiriesController < ApplicationController
   #検索窓の実装
   def search
     #Viewのformで取得したパラメータをモデルに渡す
-    # @inquiries = Inquiry.all
-    # @inquiries = @inquiries.where('title like ?', "#{params[:search]}").or(@inquiries.where('body like ?', "#{params[:search]}")) if params[:search].present?
-    # @inquiries = @inquiries.order(id:"DESC").page(params[:page])
     inquiries = Inquiry.search(params[:search]).order(id:"DESC")
     @inquiries_unconfirmed = inquiries.unconfirmed
     @inquiries_not_received = inquiries.not_received
@@ -32,8 +29,6 @@ class Admin::InquiriesController < ApplicationController
   def index
     customer = Customer.find(params[:format])
     @inquiries = customer.inquiries.order(id:"DESC").page(params[:page])
-    # binding.pry
-    # @inquiries = Customer.inquiry.page(params[:page])
   end
   
   private

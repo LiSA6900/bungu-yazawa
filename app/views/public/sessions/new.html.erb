@@ -9,11 +9,11 @@
         <%= render "public/shared/error_messages", resource: resource %>
         
         <div class="field mb-4">
-          <%= f.label :メールアドレス %><br />
+          <%= f.label :メールアドレス %><br>
           <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "abc@test.com", class: "form-control" %>
         </div>
         <div class="field mb-4">
-          <%= f.label :"パスワード(6文字以上)" %><br />
+          <%= f.label :"パスワード(6文字以上)" %><br>
           <%= f.password_field :password, autocomplete: "current-password", class: "form-control" %>
         </div>
         <div class="actions mb-2 d-flex justify-content-center">
