@@ -1,6 +1,7 @@
 class Admin::InquiriesController < ApplicationController
   
   before_action :authenticate_admin!
+  before_action :set_inquiry, only: [:show, :update]
      
   #検索窓の実装
   def search
@@ -16,11 +17,9 @@ class Admin::InquiriesController < ApplicationController
   end
   
   def show
-    @inquiry = Inquiry.find(params[:id]) 
   end
   
   def update
-    @inquiry = Inquiry.find(params[:id]) 
     @inquiry.update(inquiry_params)
     flash.now[:success] = "ステータスを更新しました。"
     render :show
@@ -35,6 +34,10 @@ class Admin::InquiriesController < ApplicationController
   
   def inquiry_params
     params.require(:inquiry).permit(:order_status)
+  end
+  
+  def set_inquiry
+    @inquiry = Inquiry.find(params[:id]) 
   end
 
 end

@@ -4,6 +4,8 @@
 class Admin::SchedulesController < ApplicationController
   
   before_action :authenticate_admin!
+  before_action :set_schedule, only: [:show, :destroy, :edit, :update]
+
   
   def index
     @schedules = Schedule.all
@@ -18,21 +20,17 @@ class Admin::SchedulesController < ApplicationController
   end
   
   def show
-    @schedule = Schedule.find(params[:id])
   end
   
   def destroy
-    @schedule = Schedule.find(params[:id])
     @schedule.destroy
     redirect_to admin_schedules_path
   end
   
   def edit
-    @schedule = Schedule.find(params[:id])
   end
   
   def update
-    @schedule = Schedule.find(params[:id])
     if @schedule.update(schedule_params)
       redirect_to admin_schedule_path(@schedule.id)
     else
@@ -46,6 +44,10 @@ class Admin::SchedulesController < ApplicationController
   
   def schedule_params
     params.require(:schedule).permit(:title, :body, :start_time)
+  end
+  
+  def set_schedule
+    @schedule = Schedule.find(params[:id])
   end
   
 end
