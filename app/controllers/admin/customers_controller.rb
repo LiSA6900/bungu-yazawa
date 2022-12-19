@@ -1,5 +1,6 @@
 class Admin::CustomersController < ApplicationController
     before_action :authenticate_admin!
+    #インスタンス変数の宣言をbofore_actionで集約【参考】 https://pikawaka.com/rails/before_action
     before_action :set_customer, only: [:show, :edit, :update]
     
     def index
