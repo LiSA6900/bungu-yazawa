@@ -1,25 +1,25 @@
 <div class= "container">
   <div class= "row my-3">
     <div class= "col-12 my-3">
-    <h2 class="inquiry-form font-weight-bold ml-5 pl-5">お問合せ一覧</h2>
-    <table class= "col-10 table-boder mx-auto">
+      <h2 class="inquiry-form font-weight-bold ml-5 pl-5">お問合せ一覧</h2>
+      <table class= "col-10 table-boder mx-auto">
         <thead class= "table-boder">
-            <tr>
-                <th class= "list text-center", style="width:25%;">日時</th>
-                <th class= "list text-center", style="width:50%;">件名</th>
-                <th class= "list text-center", style="width:20%;"></th>
-            </tr>
+          <tr>
+            <th class= "list text-center", style="width:25%;">日時</th>
+            <th class= "list text-center", style="width:50%;">件名</th>
+            <th class= "list text-center", style="width:20%;"></th>
+          </tr>
         </thead>
         <tbody>
-            <% @inquiries.each do |inquiry| %>    
-                <tr>
-                    <th class= "list text-center"><%= inquiry.created_at.strftime('%Y/%m/%d') %></th>
-                    <th class= "list text-center"><%= inquiry.title %></th>
-                    <th class= "list text-center"><%= link_to "詳細", inquiry_path(inquiry.id), class: "btn btn-dark px-3" %></th>
-                </tr>
-            <% end %>
+          <% @inquiries.each do |inquiry| %>    
+            <tr>
+              <th class= "list text-center"><%= inquiry.created_at.strftime('%Y/%m/%d') %></th>
+              <th class= "list text-center"><%= inquiry.title %></th>
+              <th class= "list text-center"><%= link_to "詳細", inquiry_path(inquiry.id), class: "btn btn-dark px-3" %></th>
+            </tr>
+          <% end %>
         </tbody>
-    </table>
+      </table>
     </div>
     <div class="col-12 mb-4 mt-3">
       <div><%= paginate @inquiries %></div>

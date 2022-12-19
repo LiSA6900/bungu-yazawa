@@ -14,54 +14,54 @@
       <% end %>
       <!--タブ部分-->
       <ul class="nav nav-tabs">
-          <li class="tab tab-active nav-item px-4 py-1 font-weight-bold">
-              未確認<br>
-              <%= @inquiries_unconfirmed.count %>件
-          </li>
-          <li class="tab nav-item px-4 py-1 font-weight-bold">
-              未受注<br>
-              <%= @inquiries_not_received.count %>件
-          </li>
-          <li class="tab nav-item px-4 py-1 font-weight-bold">
-              受注<br>
-              <%= @inquiries_order_received.count %>件
-          </li>
-          <li class="tab nav-item px-4 py-1 font-weight-bold">
-              対応済<br>
-              <%= @inquiries_done.count %>件
-          </li>
-          <li class="tab nav-item px-4 py-1 font-weight-bold">
-              一覧<br>
-              <%= @inquiries.count %>件
-          </li>
+        <li class="tab tab-active nav-item px-4 py-1 font-weight-bold">
+            未確認<br>
+            <%= @inquiries_unconfirmed.count %>件
+        </li>
+        <li class="tab nav-item px-4 py-1 font-weight-bold">
+            未受注<br>
+            <%= @inquiries_not_received.count %>件
+        </li>
+        <li class="tab nav-item px-4 py-1 font-weight-bold">
+            受注<br>
+            <%= @inquiries_order_received.count %>件
+        </li>
+        <li class="tab nav-item px-4 py-1 font-weight-bold">
+            対応済<br>
+            <%= @inquiries_done.count %>件
+        </li>
+        <li class="tab nav-item px-4 py-1 font-weight-bold">
+            一覧<br>
+            <%= @inquiries.count %>件
+        </li>
       </ul>
       <table class="w-100 table-boder">
-          <thead class= "table-boder">
-              <tr>
-                  <th class= "list text-center", style="width:15%;">問い合わせID</th>
-                  <th class= "list text-center", style="width:10%;">日時</th>
-                  <th class= "list text-center", style="width:30%;">件名</th>
-                  <th class= "list text-center", style="width:20%;">名前</th>
-                  <th class= "list text-center", style="width:15%;">ステータス</th>
-                  <th class= "list text-center", style="width:10%;"></th>
-              </tr>
-          </thead>
-          <!--タブで選択された要素部分-->
-          <tbody class="tabbox box-show">
-              <%= render 'admin/shared/inquiry', inquiries: @inquiries_unconfirmed %>
-          </tbody>
-          <tbody class="tabbox">
-              <%= render 'admin/shared/inquiry', inquiries: @inquiries_not_received %>
-          </tbody>
-          <tbody class="tabbox">
-              <%= render 'admin/shared/inquiry', inquiries: @inquiries_order_received %>
-          </tbody>
-          <tbody class="tabbox">
-              <%= render 'admin/shared/inquiry', inquiries: @inquiries_done %>
-          </tbody>
-          <tbody class="tabbox">
-              <%= render 'admin/shared/inquiry', inquiries: @inquiries %>
-          </tbody>
+        <thead class= "table-boder">
+          <tr>
+            <th class= "list text-center", style="width:15%;">問い合わせID</th>
+            <th class= "list text-center", style="width:10%;">日時</th>
+            <th class= "list text-center", style="width:30%;">件名</th>
+            <th class= "list text-center", style="width:20%;">名前</th>
+            <th class= "list text-center", style="width:15%;">ステータス</th>
+            <th class= "list text-center", style="width:10%;"></th>
+          </tr>
+        </thead>
+        <!--タブで選択された要素部分-->
+        <tbody class="tabbox box-show">
+            <%= render 'admin/shared/inquiry', inquiries: @inquiries_unconfirmed %>
+        </tbody>
+        <tbody class="tabbox">
+            <%= render 'admin/shared/inquiry', inquiries: @inquiries_not_received %>
+        </tbody>
+        <tbody class="tabbox">
+            <%= render 'admin/shared/inquiry', inquiries: @inquiries_order_received %>
+        </tbody>
+        <tbody class="tabbox">
+            <%= render 'admin/shared/inquiry', inquiries: @inquiries_done %>
+        </tbody>
+        <tbody class="tabbox">
+            <%= render 'admin/shared/inquiry', inquiries: @inquiries %>
+        </tbody>
       </table>
     </div>
   </div>
